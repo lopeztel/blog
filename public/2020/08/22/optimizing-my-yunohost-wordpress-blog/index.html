@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Optimizing my yunohost wordpress blog | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, Raspberrypi, Selfhosting, Wordpress, yunohost">
+<meta name="description" content="After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .">
+<meta name="author" content="lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Optimizing my yunohost wordpress blog" />
+<meta property="og:description" content="After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-22T10:07:13&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-22T10:07:13&#43;00:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Optimizing my yunohost wordpress blog"/>
+<meta name="twitter:description" content="After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the ."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Optimizing my yunohost wordpress blog",
+      "item": "https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Optimizing my yunohost wordpress blog",
+  "name": "Optimizing my yunohost wordpress blog",
+  "description": "After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.\nFor reference, lots of documentation goodness here\nThe most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.\nAfter some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .",
+  "keywords": [
+    "100DaysToOffload", "Raspberrypi", "Selfhosting", "Wordpress", "yunohost"
+  ],
+  "articleBody": "After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.\nFor reference, lots of documentation goodness here\nThe most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.\nAfter some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .htaccess file (accessible by the plugin through: LiteSpeed Cache-\u003eToolbox-\u003eEdit .htaccess):\n1 2 3 4 5 6 7 8 9 10 mod_gzip_on Yes mod_gzip_dechunk Yes mod_gzip_item_include file .(html?|txt|css|js|php|pl)$ mod_gzip_item_include handler ^cgi-script$ mod_gzip_item_include mime ^text/.* mod_gzip_item_include mime ^application/x-javascript.* mod_gzip_item_exclude mime ^image/.* mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.* This didn’t work and realized that gzip doesn’t come enabled by default (most things were commented out) in yunohost’s nginx installation. So I referred to this link and edited the file /etc/nginx/nginx.conf :\n1 2 3 4 5 6 7 8 9 gzip on; add_header Content-Encoding \"gzip2\"; gzip_vary on; gzip_proxied any; gzip_comp_level 6; gzip_buffers 16 8k; gzip_http_version 1.1; gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/x-javascript The line\nadd_header Content-Encoding \"gzip2\";\nis the most important, after that my blog was tested for compression using: https://www.giftofspeed.com/gzip-test/ and https://varvy.com/tools/gzip/, both test websites see compression enabled.\nI’m still not sure about Google’s PageSpeed Insights but GTmetrix sees it as well. Here are my results (for now):\nJust for fun (haven’t looked too much into this yet) I am adding the score for Website carbon as well:\nSo far I am more or less happy with the results and there is room for improvement. Some settings seem to break my Indieweb and ActivityPub plugins.\nDay 15 of #100DaysToOffload\n",
+  "wordCount" : "288",
+  "inLanguage": "en",
+  "datePublished": "2020-08-22T10:07:13Z",
+  "dateModified": "2020-08-22T10:07:13Z",
+  "author":{
+    "@type": "Person",
+    "name": "lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Optimizing my yunohost wordpress blog
+    </h1>
+    <div class="post-meta"><span title='2020-08-22 10:07:13 +0000 +0000'>August 22, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>After my last update about my <a href="https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress">blog
+migration</a>, basically
+all I did was install <a href="https://wordpress.org/plugins/litespeed-cache/">LiteSpeed Cache
+plugin</a> and mess around with
+it.</p>
+<p>For reference, lots of documentation goodness <a href="https://docs.litespeedtech.com/">here</a></p>
+<p>The most important part to note is that I kept getting bugged by both
+Google’s PageSpeed Insights and GTmetrix to enable text compression.</p>
+<p>After some time reading about compression and <a href="https://markosaric.com/speed-up-wordpress/">Marco Saric’s
+blogpost</a>, I tried to enable
+compression by adding some lines of code at the bottom of the .htaccess file
+(accessible by the plugin through: LiteSpeed Cache-&gt;Toolbox-&gt;Edit .htaccess):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1"> 1</a>
+</span><span class="lnt" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2"> 2</a>
+</span><span class="lnt" id="hl-0-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3"> 3</a>
+</span><span class="lnt" id="hl-0-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4"> 4</a>
+</span><span class="lnt" id="hl-0-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5"> 5</a>
+</span><span class="lnt" id="hl-0-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-6"> 6</a>
+</span><span class="lnt" id="hl-0-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-7"> 7</a>
+</span><span class="lnt" id="hl-0-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-8"> 8</a>
+</span><span class="lnt" id="hl-0-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-9"> 9</a>
+</span><span class="lnt" id="hl-0-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-10">10</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;ifModule mod_gzip.c&gt;
+</span></span><span class="line"><span class="cl">mod_gzip_on Yes
+</span></span><span class="line"><span class="cl">mod_gzip_dechunk Yes
+</span></span><span class="line"><span class="cl">mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+</span></span><span class="line"><span class="cl">mod_gzip_item_include handler ^cgi-script$
+</span></span><span class="line"><span class="cl">mod_gzip_item_include mime ^text/.*
+</span></span><span class="line"><span class="cl">mod_gzip_item_include mime ^application/x-javascript.*
+</span></span><span class="line"><span class="cl">mod_gzip_item_exclude mime ^image/.*
+</span></span><span class="line"><span class="cl">mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</span></span><span class="line"><span class="cl">&lt;/ifModule&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This didn’t work and realized that gzip doesn’t come enabled by
+default (most things were commented out) in yunohost’s nginx
+installation. So I referred to this
+<a href="https://varvy.com/pagespeed/enable-compression.html">link</a> and edited the file
+<em>/etc/nginx/nginx.conf</em> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span><span class="lnt" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2</a>
+</span><span class="lnt" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3</a>
+</span><span class="lnt" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4">4</a>
+</span><span class="lnt" id="hl-1-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5">5</a>
+</span><span class="lnt" id="hl-1-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6">6</a>
+</span><span class="lnt" id="hl-1-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7">7</a>
+</span><span class="lnt" id="hl-1-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8">8</a>
+</span><span class="lnt" id="hl-1-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9">9</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gzip on;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">add_header Content-Encoding &#34;gzip2&#34;;
+</span></span><span class="line"><span class="cl">gzip_vary on;
+</span></span><span class="line"><span class="cl">gzip_proxied any;
+</span></span><span class="line"><span class="cl">gzip_comp_level 6;
+</span></span><span class="line"><span class="cl">gzip_buffers 16 8k;
+</span></span><span class="line"><span class="cl">gzip_http_version 1.1;
+</span></span><span class="line"><span class="cl">gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/x-javascript
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The line</p>
+<p><code>add_header Content-Encoding &quot;gzip2&quot;;</code></p>
+<p>is the most important, after that my blog was tested for compression using:
+<a href="https://www.giftofspeed.com/gzip-test/">https://www.giftofspeed.com/gzip-test/</a>
+and <a href="https://varvy.com/tools/gzip/">https://varvy.com/tools/gzip/</a>, both test
+websites see compression enabled.</p>
+<p>I’m still not sure about <a href="https://developers.google.com/speed/pagespeed/insights/">Google’s PageSpeed
+Insights</a> but
+<a href="https://gtmetrix.com/">GTmetrix</a> sees it as well. Here are my results (for
+now):</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/galleries/blog_media/Screenshot-from-2020-08-22-11-56-47-768x504.png#center" alt="Google’s PageSpeed Insights"  />
+</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/galleries/blog_media/Screenshot-from-2020-08-22-11-57-16-768x481.png#center" alt="Gtmetrix"  />
+</p>
+<p>Just for fun (haven’t looked too much into this yet) I am adding the
+score for <a href="https://www.websitecarbon.com/">Website carbon</a> as well:</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/galleries/blog_media/Screenshot-from-2020-08-22-12-01-09-768x511.png#center" alt="Website carbon"  />
+</p>
+<p>So far I am more or less happy with the results and there is room for
+improvement. Some settings seem to break my Indieweb and ActivityPub plugins.</p>
+<p>Day 15 of <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/raspberrypi/">Raspberrypi</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/selfhosting/">Selfhosting</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/wordpress/">Wordpress</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/yunohost/">yunohost</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lopeztel.xyz/blog/2020/08/26/foss-donations/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>FOSS Donations</span>
+  </a>
+  <a class="next" href="https://lopeztel.xyz/blog/2020/08/21/terminal-bling/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Terminal bling</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

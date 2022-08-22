@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wordpress on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/wordpress/</link>
+    <description>Recent content in Wordpress on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jan 2021 20:29:13 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My blogging journey so far</title>
+      <link>https://lopeztel.xyz/blog/2021/01/21/my-blogging-journey-so-far/</link>
+      <pubDate>Thu, 21 Jan 2021 20:29:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/01/21/my-blogging-journey-so-far/</guid>
+      <description>I remember I started a blog in March last year (2019), it was a simple Writefreely blog,it looked like this:
+It was simple, easy to use and you could follow it via mastodon, I wanted to engage a bit more with my fellow fedizens so I started looking into Wordpress around the same time I built my Raspberrypi 4 server and I found out that Wordpress was an app Yunohost had listed (it&amp;rsquo;s basically a one-click install but you require a dedicated domain) so I migrated, at the time that was easy, just downloaded all my previous posts in markdown and added them one by one (there weren&amp;rsquo;t that many).</description>
+    </item>
+    
+    <item>
+      <title>Weird things happen when you selfhost your blog (edit)</title>
+      <link>https://lopeztel.xyz/blog/2020/10/16/weird-things-happen-when-you-selfhost-your-blog-edit/</link>
+      <pubDate>Fri, 16 Oct 2020 18:02:23 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/16/weird-things-happen-when-you-selfhost-your-blog-edit/</guid>
+      <description>Interesting, I managed to screw up my blog. Logging in is impossible through a web browser, I get the message:
+502 Bad Gateway
+&amp;ndash; nginx
+This happened after messing around with the WP Reset plugin, apparently I deleted some custom table I shouldn’t have… Funnily enough I am still able to use the android app to create posts so not all hope is gone.
+Weird things happen….
+Edit: Turns out I couldn’t access the login screen for my site but could access the comments section (you know the one where you can approve new comments, then from there Dashboard was broken but I could access the menu Tools -&amp;gt; WP Reset).</description>
+    </item>
+    
+    <item>
+      <title>Optimizing my yunohost wordpress blog</title>
+      <link>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</link>
+      <pubDate>Sat, 22 Aug 2020 10:07:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</guid>
+      <description>After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .</description>
+    </item>
+    
+    <item>
+      <title>Migration to WordPress</title>
+      <link>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</link>
+      <pubDate>Sun, 16 Aug 2020 11:15:25 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</guid>
+      <description>In recent days I’ve been busy trying to get my blog up and running on my cheapo Raspberry Pi + Yunohost server setup. The process was fun, so here’s a blog entry about migrating my blog (blogception?) from a writefreely instance to my self hosted wordpress instance.
+Why though? To put it simply: because I can.
+On a more serious note, my previous blog was hosted at qua.name and there was nothing wrong with it, but I really wanted to be able to have a bit more interaction, easy theming, and an overall a plug and play solution with a GUI.</description>
+    </item>
+    
+  </channel>
+</rss>

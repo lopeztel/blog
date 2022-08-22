@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>pinebookpro on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/pinebookpro/</link>
+    <description>Recent content in pinebookpro on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Dec 2020 13:52:02 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/pinebookpro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts on the pinebookpro (Part 4)</title>
+      <link>https://lopeztel.xyz/blog/2020/12/06/thoughts-on-the-pinebookpro-part-4/</link>
+      <pubDate>Sun, 06 Dec 2020 13:52:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/06/thoughts-on-the-pinebookpro-part-4/</guid>
+      <description>This is a follow-up on a previous entry
+Dealing with an external display A while back I ordered a USB-C dongle that I thought wasn’t working so I checked a list of USB Combination Devices that are compatible in the wiki, more specifically I had to wait for this USB-C dongle from aliexpress to get here.
+Turns out the new dongle didn’t work either, weird flicker when trying to switch to external display:</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 3)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</link>
+      <pubDate>Tue, 17 Nov 2020 18:24:11 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</guid>
+      <description>This is a follow-up on a previous entry
+One step closer to daily driver!!
+Working from home is possible with the pinebookpro I managed to connect to my workplace’s VPN, however it took some digging around: first of all, we have a Linux VPN package, so that’s already something, (kudos for showing Linux some love); you can choose to either install a .deb package, a .rpm package or build from source for either x86_64 or armhf architectures (basically just copies over some pre-compiled binaries), so far so good, everything great.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</link>
+      <pubDate>Sat, 14 Nov 2020 14:14:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</guid>
+      <description>This is a follow-up to this entry.
+This time I’ll try to describe more day to day use (at least mine):
+Generic tasks The most simple task I use a computer for is writing entries for my blog, as I mentioned before I love the Markdown format… I’ve found a perfectly good FOSS replacement for Typora, which is also available for aarch64, so I am now using Ghostwriter.
+Speaking of typing, I’ve been using the keyboard on the pinebookpro for a while now and it is quite good for the price, no premium feeling to it but it feels sturdy and the keys have decent travel, so that’s ok.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebook pro</title>
+      <link>https://lopeztel.xyz/blog/2020/10/23/thoughts-on-the-pinebook-pro/</link>
+      <pubDate>Fri, 23 Oct 2020 18:32:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/23/thoughts-on-the-pinebook-pro/</guid>
+      <description>Back in September I pulled the trigger and ordered a pinebook pro.
+Long story short: I declare myself a fanboy, the pinebook pro from pine64 is a very capable little machine.
+There are a lot of better written and more detailed blog posts/reviews of the pinebook pro out there already but just in case:
+For the uninitiated the pinebook pro is an ARM powered laptop (yes, pine64 did it before it was cool) based on the ROCKPro64 single board computer –Think Raspberrypi on steroids– here are the specs:</description>
+    </item>
+    
+  </channel>
+</rss>

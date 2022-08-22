@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Making a bluetooth split keyboard (Part 1-a) | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, SplitKeyboard, nRF52">
+<meta name="description" content="A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
+I found some instructions in blackmagic-bluepill to follow
+I’ll try to summarize:
+wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .">
+<meta name="author" content="lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Making a bluetooth split keyboard (Part 1-a)" />
+<meta property="og:description" content="A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
+I found some instructions in blackmagic-bluepill to follow
+I’ll try to summarize:
+wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-05T19:00:20&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-05T19:00:20&#43;00:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Making a bluetooth split keyboard (Part 1-a)"/>
+<meta name="twitter:description" content="A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
+I found some instructions in blackmagic-bluepill to follow
+I’ll try to summarize:
+wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load ."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Making a bluetooth split keyboard (Part 1-a)",
+      "item": "https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Making a bluetooth split keyboard (Part 1-a)",
+  "name": "Making a bluetooth split keyboard (Part 1-a)",
+  "description": "A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :\nI found some instructions in blackmagic-bluepill to follow\nI’ll try to summarize:\nwiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .",
+  "keywords": [
+    "100DaysToOffload", "SplitKeyboard", "nRF52"
+  ],
+  "articleBody": "A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :\nI found some instructions in blackmagic-bluepill to follow\nI’ll try to summarize:\nwiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .bin files so I converted the downloaded binaries to .hex files 1 2 arm-none-eabi-objcopy -I binary -O ihex blackmagic_dfu.bin blackmagic_dfu.hex arm-none-eabi-objcopy -I binary -O ihex blackmagic.bin blackmagic.hex 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 arm-none-eabi-gdb target extended-remote /dev/ttyBmpGdb #/dev/ttyACM0 or /dev/ttyACM1 if the device rules are not installed monitor swdp_scan #this should show the target board voltage and Something like #No. Att Driver #1 M4 #up until this point I was holding the target board's reset button #I had to try multiple times to do the following step and releasing the reset #button at the same time attach 1 load ./blackmagic_dfu.hex 0x8000000 load ./blackmagic.hex 0x8002000 quit Issuing lsusb yields:\nSo yes, I now have a fully operational blackmagic-bluepill 😀\nDay 16 of my 2021’s #100DaysToOffload\nJoin 100DaysToOffload!\n",
+  "wordCount" : "256",
+  "inLanguage": "en",
+  "datePublished": "2021-07-05T19:00:20Z",
+  "dateModified": "2021-07-05T19:00:20Z",
+  "author":{
+    "@type": "Person",
+    "name": "lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Making a bluetooth split keyboard (Part 1-a)
+    </h1>
+    <div class="post-meta"><span title='2021-07-05 19:00:20 +0000 +0000'>July 5, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>A bit of a followup on a previous <a href="https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/">entry</a>, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :</p>
+<p>I found some instructions in <a href="https://github.com/koendv/blackmagic-bluepill">blackmagic-bluepill</a> to follow</p>
+<p>I’ll try to summarize:</p>
+<ol>
+<li>wiring is important!</li>
+</ol>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/koendv/Connecting-Black-Magic-Probe-and-Blue-Pill/master/bmp_bp.svg" alt="Wiring diagram"  />
+ <!-- raw HTML omitted --></p>
+<ol start="2">
+<li>Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the <a href="https://github.com/joric/nrfmicro/wiki/Bootloader#bluepill">nRFmicro repo</a> got their supplied blackmagic binaries</li>
+<li>For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (<code>arm-none-eabi-binutils</code>, <code>arm-none-eabi-gcc</code> and <code>arm-none-eabi-gdb</code> are installed at this point, this is the list of commands to follow:</li>
+<li>I couldn’t load .bin files so I converted the downloaded binaries to .hex files</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span><span class="lnt" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">arm-none-eabi-objcopy -I binary -O ihex blackmagic_dfu.bin blackmagic_dfu.hex
+</span></span><span class="line"><span class="cl">arm-none-eabi-objcopy -I binary -O ihex blackmagic.bin blackmagic.hex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1</a>
+</span><span class="lnt" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2</a>
+</span><span class="lnt" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3</a>
+</span><span class="lnt" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4</a>
+</span><span class="lnt" id="hl-1-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5</a>
+</span><span class="lnt" id="hl-1-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6</a>
+</span><span class="lnt" id="hl-1-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7</a>
+</span><span class="lnt" id="hl-1-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8</a>
+</span><span class="lnt" id="hl-1-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9</a>
+</span><span class="lnt" id="hl-1-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10</a>
+</span><span class="lnt" id="hl-1-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-11">11</a>
+</span><span class="lnt" id="hl-1-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-12">12</a>
+</span><span class="lnt" id="hl-1-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-13">13</a>
+</span><span class="lnt" id="hl-1-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-14">14</a>
+</span><span class="lnt" id="hl-1-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-15">15</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">arm-none-eabi-gdb
+</span></span><span class="line"><span class="cl">target extended-remote /dev/ttyBmpGdb 
+</span></span><span class="line"><span class="cl"><span class="c1">#/dev/ttyACM0 or /dev/ttyACM1 if the device rules are not installed</span>
+</span></span><span class="line"><span class="cl">monitor swdp_scan
+</span></span><span class="line"><span class="cl"><span class="c1">#this should show the target board voltage and Something like</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#No. Att Driver</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#1      M4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#up until this point I was holding the target board&#39;s reset button</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#I had to try multiple times to do the following step and releasing the reset</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#button at the same time</span>
+</span></span><span class="line"><span class="cl">attach <span class="m">1</span>
+</span></span><span class="line"><span class="cl">load ./blackmagic_dfu.hex 0x8000000
+</span></span><span class="line"><span class="cl">load ./blackmagic.hex 0x8002000
+</span></span><span class="line"><span class="cl">quit
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/_data/i/galleries/blog_media/flahing_bmp-me.png#center" alt=""  />
+</p>
+<p>Issuing <code>lsusb</code> yields:</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/_data/i/galleries/blog_media/lsusb_bmp-me.png#center" alt=""  />
+</p>
+<p>So yes, I now have a fully operational <strong>blackmagic-bluepill</strong> 😀</p>
+<hr>
+<p>Day 16 of my 2021’s <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+<p>Join <a href="https://100daystooffload.com/">100DaysToOffload</a>!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/splitkeyboard/">SplitKeyboard</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/nrf52/">nRF52</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Making a bluetooth split keyboard part 2</span>
+  </a>
+  <a class="next" href="https://lopeztel.xyz/blog/2021/07/01/rgb-wifi-enabled-lamp-part-2/">
+    <span class="title">Next »</span>
+    <br>
+    <span>RGB WiFi enabled lamp (Part 2)</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

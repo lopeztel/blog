@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>yunohost on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/yunohost/</link>
+    <description>Recent content in yunohost on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Feb 2021 18:59:15 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/yunohost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migration from Google Photos to Nextcloud and Piwigo</title>
+      <link>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</link>
+      <pubDate>Sat, 13 Feb 2021 18:59:15 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</guid>
+      <description>Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad</description>
+    </item>
+    
+    <item>
+      <title>Fooling around with bash scripts</title>
+      <link>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</link>
+      <pubDate>Tue, 02 Feb 2021 19:13:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</guid>
+      <description>I thought I would share 2 shell scripts that I’ve found useful, the first one allows me to to use my DSLR camera as a webcam and the second one allows me to batch resize and optimize images
+Using DSLR as webcam This is probably most useful in COVID-19 times, found it a while back on YouTube (not a fan of the big G? Invidious or FreeTube are your friends), also here’s a blog post for more details.</description>
+    </item>
+    
+    <item>
+      <title>Thank you Yunohost (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/12/12/thank-you-yunohost-part-2/</link>
+      <pubDate>Sat, 12 Dec 2020 09:52:12 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/12/thank-you-yunohost-part-2/</guid>
+      <description>This is a bit of a continuation on my previous thank you post, since I received a lot of help and it deserves proper credit, this post is to be taken as part thank you note and part summary of the whole SSL certificate issue ordeal:
+First things first, in short Yunohost is an easy solution to get started with self hosting without dealing with the more technical side of things, it’s easy to install apps and I’ve been running a yunohost server on my raspberry pi 4 for months now.</description>
+    </item>
+    
+    <item>
+      <title>FOSS Donations</title>
+      <link>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</link>
+      <pubDate>Wed, 26 Aug 2020 16:58:45 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</guid>
+      <description>Let me start by saying that the purpose of this entry is not to say “Look at how selfless I am for donating money to FOSS organizations or projects” so, with that in mind, I will not list any specific quantities because that is not the point I am trying to make. Having written the proper disclaimer, let’s get to it:
+My preferences In the past month I have written about my projects and experiences with FOSS, self hosting and even digital art.</description>
+    </item>
+    
+    <item>
+      <title>Optimizing my yunohost wordpress blog</title>
+      <link>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</link>
+      <pubDate>Sat, 22 Aug 2020 10:07:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</guid>
+      <description>After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .</description>
+    </item>
+    
+    <item>
+      <title>Migration to WordPress</title>
+      <link>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</link>
+      <pubDate>Sun, 16 Aug 2020 11:15:25 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</guid>
+      <description>In recent days I’ve been busy trying to get my blog up and running on my cheapo Raspberry Pi + Yunohost server setup. The process was fun, so here’s a blog entry about migrating my blog (blogception?) from a writefreely instance to my self hosted wordpress instance.
+Why though? To put it simply: because I can.
+On a more serious note, my previous blog was hosted at qua.name and there was nothing wrong with it, but I really wanted to be able to have a bit more interaction, easy theming, and an overall a plug and play solution with a GUI.</description>
+    </item>
+    
+    <item>
+      <title>My Raspberry Pi server with yunohost</title>
+      <link>https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/</link>
+      <pubDate>Sat, 08 Aug 2020 20:37:35 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/</guid>
+      <description>I will try to make this entry resemble a tutorial, hopefully this ends up being useful to someone.
+Why start over? I had been playing around with Open Media Vault before (see this entry for details), but it was mainly based on docker images and I could never get Nextcloud up and running (the closest I came was installing nextcloudpi, but I could never get the docker image to run using external storage).</description>
+    </item>
+    
+    <item>
+      <title>Thank you yunohost</title>
+      <link>https://lopeztel.xyz/blog/2020/08/06/thank-you-yunohost/</link>
+      <pubDate>Thu, 06 Aug 2020 06:00:03 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/06/thank-you-yunohost/</guid>
+      <description>Ever since I started looking into the Fediverse, FOSS/FLOSS, privacy and self-hosting I was pleasantly surprised by how engaging and helpful the community can be.
+As an example: in Fosstodon all my interactions have been very nice, from sharing random unrelated stuff to asking for advice on more technical matters everyone has always been helpful and willing to give advice.
+Another great experience I had recently was related with the yunohost project (long story short, my Open Media Vault setup went down in flames, tutorial coming shortly), being kind of a big project one would think that as an individual, communication would be slow or hard, kind of like with companies as a consumer.</description>
+    </item>
+    
+  </channel>
+</rss>

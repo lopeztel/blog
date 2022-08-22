@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.101.0" /><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="Blog">
+<meta name="description" content="Collection of random thoughts and ramblings of a somewhat interesting person
+">
+<meta name="author" content="Lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://lopeztel.xyz/blog/index.xml">
+<link rel="alternate" type="application/json" href="https://lopeztel.xyz/blog/index.json">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Lopeztel&#39;s Blog" />
+<meta property="og:description" content="Collection of random thoughts and ramblings of a somewhat interesting person
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lopeztel&#39;s Blog"/>
+<meta name="twitter:description" content="Collection of random thoughts and ramblings of a somewhat interesting person
+"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Lopeztel's Blog",
+  "url": "https://lopeztel.xyz/blog",
+  "description": "Collection of random thoughts and ramblings of a somewhat interesting person\n",
+  "thumbnailUrl": "https://lopeztel.xyz/blog/favicon.ico",
+  "sameAs": [
+      "https://fosstodon.org/@lopeztel", "https://matrix.to/#/@lopeztel:matrix.org", "https://github.com/lopeztel", "https://lopeztel.noho.st/gitea/lopeztel", "index.xml"
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>My blogging journey so far
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I remember I started a blog in March last year (2019), it was a simple Writefreely blog,it looked like this:
+It was simple, easy to use and you could follow it via mastodon, I wanted to engage a bit more with my fellow fedizens so I started looking into Wordpress around the same time I built my Raspberrypi 4 server and I found out that Wordpress was an app Yunohost had listed (it’s basically a one-click install but you require a dedicated domain) so I migrated, at the time that was easy, just downloaded all my previous posts in markdown and added them one by one (there weren’t that many)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-01-21 20:29:13 +0000 +0000'>January 21, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to My blogging journey so far" href="https://lopeztel.xyz/blog/2021/01/21/my-blogging-journey-so-far/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Day of the Epiphany (Three Kings’ Day?) away from Mexico
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Following up on my series “Celebrating holidays away from Mexico”, after entries such as: a rant about Mexican food on independence day and day of the dead
+January 6th is Día de Reyes, the last date of what we Mexicans know as the Guadalupe – Reyes marathon (which is, in short, an extended holiday period for eating and drinking that starts on December 12th)
+Being away from home and still a bit bitter about not being able to go back home for the holidays because of COVID-19, I contacted my baker friend and ordered Rosca de Reyes (roughly translates to King’s baguel I guess)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-01-09 09:08:20 +0000 +0000'>January 9, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to Day of the Epiphany (Three Kings’ Day?) away from Mexico" href="https://lopeztel.xyz/blog/2021/01/09/day-of-the-epiphany-three-kings-day-away-from-mexico/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Christmas 2020
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>This is meant to be a reflection on spending Christmas alone in one of the worst years for the planet in general.
+I think it’s basically beating on a dead horse to say that 2020 has been horrible in general due to COVID-19, everyone has had it tough for a lot of reasons, from the worst (having lost a loved one or health issues) to the minor annoyances (like working from home)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-12-29 19:11:18 +0000 +0000'>December 29, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to Christmas 2020" href="https://lopeztel.xyz/blog/2020/12/29/christmas-2020/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Some CLI awesomeness
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I’ll have to confess I wasn’t always a fan of CLI applications, I come from a world were all I knew was GUI. I even thought that the heavy use of terminal emulators and CLI apps was snobbish, you know, the feeling was kind of like when (some) people say “BTW, I use Arch” I used to roll my eyes internally.
+Yet, here I am writing about CLI apps and how awesome they are…...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-12-17 20:30:53 +0000 +0000'>December 17, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to Some CLI awesomeness" href="https://lopeztel.xyz/blog/2020/12/17/some-cli-awesomeness/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>A little more than a year living in Norway
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>As the title suggests, it’s been a little over a year since I moved to Norway for work… It’s been a challenging year to say the least, and not only because of COVID-19.
+For starters, it’s been hard to get used to this weird country’s ways (and I mean this in the most endearing way), from personal space, weather and language to food (I am Mexican and I cannot stress the importance of food enough, see my previous entry for reference)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-12-15 20:10:54 +0000 +0000'>December 15, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to A little more than a year living in Norway" href="https://lopeztel.xyz/blog/2020/12/15/a-little-more-than-a-year-living-in-norway/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://lopeztel.xyz/blog/page/3/">« Prev</a>
+    <a class="next" href="https://lopeztel.xyz/blog/page/5/">Next »</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

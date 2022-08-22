@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gnome on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/gnome/</link>
+    <description>Recent content in Gnome on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 20:52:46 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gnome Nord theme install script</title>
+      <link>https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/</link>
+      <pubDate>Fri, 06 May 2022 20:52:46 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/</guid>
+      <description>I’ll start this post by saying that I have a thing for the Nord theme, every time I clean install a system I go through the trouble of applying the theme to everything, which got me thinking that I could automate most of it, at least for my gnome installs.
+More info on Nord theme ports here
+My script (also available here) should:
+Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

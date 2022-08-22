@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Migration from Google Photos to Nextcloud and Piwigo | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, Nextcloud, piwigo, Raspberrypi, Tutorial, yunohost">
+<meta name="description" content="Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad">
+<meta name="author" content="lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Migration from Google Photos to Nextcloud and Piwigo" />
+<meta property="og:description" content="Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-13T18:59:15&#43;00:00" />
+<meta property="article:modified_time" content="2021-02-13T18:59:15&#43;00:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Migration from Google Photos to Nextcloud and Piwigo"/>
+<meta name="twitter:description" content="Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Migration from Google Photos to Nextcloud and Piwigo",
+      "item": "https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Migration from Google Photos to Nextcloud and Piwigo",
+  "name": "Migration from Google Photos to Nextcloud and Piwigo",
+  "description": "Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.\nJust for context I didn’t have that much in Google Photos, around 45 GB total, not bad",
+  "keywords": [
+    "100DaysToOffload", "Nextcloud", "piwigo", "Raspberrypi", "Tutorial", "yunohost"
+  ],
+  "articleBody": "Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.\nJust for context I didn’t have that much in Google Photos, around 45 GB total, not bad\nOrganization One of the most common comments I get from family and friends is that photos in either web browser through Nextcloud shared links or piwigo app take forever to load, and it makes sense, full sized glory usually meant 17+ MB per file… *me mentally kicking myself\nWhile I will be backing up my pictures in all their full sized glory, I decided to also create a compressed images directory for easy sharing through Nextcloud shared links and/or faster viewing in my Piwigo private, password protected photo albums both on a web browser and the mobile app.\nThe setup is a bit weird, while my raspberry pi yunohost server boots up from an external HDD, and every Yunohost app lives there, I want most of the content to live in one of my 2 x 1 TB RAID1 arrays (All in all I have 5 SATA drives attached to the raspberry pi server).\nNextcloud was not a problem since it supports adding external drives, it lists my 2 RAID arrays as storage0 and storage1, however the other apps were tricker to setup. Both Piwigo and WordPress don’t play well with external drives or they don’t offer any option to use them so, teaks…\nWithout going too much into details, most of the Yunohost apps follow the path /var/www/ so I created symlinks pointing to directories in either storage0 or storage1 for both Piwigo and WordPress, that way I get to see the files in Nextcloud as well. Piwigo example:\nI navigated to /var/www/piwigo/galleries, which is the directory scanned to add new albums in Piwigo, then I did:\n1 sudo ln -s /home/admin/media/storage0/Photos/ Which basically follows the convention sudo ln -s I haven’t found a way to batch process this, I could set up a single symlink to a single directory in storage0 and make piwigo scan subfolders but that would make a huge album with a ton of sub-albums, so I do this on a directory by directory basis by hand\nCompression The approach is simple, just run my compression script recursively through all the album directories\nCompression comparison: Shortpixel vs my own script As I mentioned before, I was using Shortpixel to compress pictures for my blog posts, but my entire photo library is a pretty big task more suited to do in batches, which is why decided to use my own optimization/resizing script.\nJust for fun and because @ndanes gave me the idea I thought I would compare both approaches:\nOriginal Image size compressed with script shortpixel lossy shortpixel glossy shortpixel lossless 17.7 MB 186.2 KB 64 KB 124 KB 149.6 KB Only did one picture but this gives a rough idea\nWanna see the files? here’s a link (WordPress may compress images further and this is the only way I found to share the image results)\nSome findings:\nI discovered shortpixel has a limit of 18.27MB per file Lossy and Glossy compression seem to mess with the white balance, slightly bluer. Which is a no no if you’re trying to show that perfect picture you took your sweet time taking and editing Script is slightly less efficient but retains a high level of quality and doesn’t mess with white balance, results are comparable to lossless compression in short pixel Given the fact that I am going to be processing loads of files the script way seems good enough, plus it is also possible to tweak further to shave off some KBs but I’m quite happy with the current results.\nUpload Now, this is probably the most inefficient step of the process because I haven’t been able to find the time to setup FTP access to my files to I usually did access to Nextcloud (which in turns writes/reads to/from storage0 and storage1) by webdav or web interface to upload/download files. Needless to say this is a time consuming task\nThat’s it, questions, comments, improvements? (I’d really appreciate those)\nDay 49 of my 2020’s #100DaysToOffload\nJoin 100DaysToOffload!\n",
+  "wordCount" : "735",
+  "inLanguage": "en",
+  "datePublished": "2021-02-13T18:59:15Z",
+  "dateModified": "2021-02-13T18:59:15Z",
+  "author":{
+    "@type": "Person",
+    "name": "lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Migration from Google Photos to Nextcloud and Piwigo
+    </h1>
+    <div class="post-meta"><span title='2021-02-13 18:59:15 +0000 +0000'>February 13, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;lopeztel
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#getting-the-pictures" aria-label="Getting the pictures">Getting the pictures</a></li>
+                <li>
+                    <a href="#organization" aria-label="Organization">Organization</a></li>
+                <li>
+                    <a href="#compression" aria-label="Compression">Compression</a><ul>
+                        
+                <li>
+                    <a href="#compression-comparison-shortpixel-vs-my-own-script" aria-label="Compression comparison: Shortpixel vs my own script">Compression comparison: Shortpixel vs my own script</a></li></ul>
+                </li>
+                <li>
+                    <a href="#upload" aria-label="Upload">Upload</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="getting-the-pictures">Getting the pictures<a hidden class="anchor" aria-hidden="true" href="#getting-the-pictures">#</a></h2>
+<p>First step was downloading all my pictures from Google Photos, so I went to <a href="https://takeout.google.com">Google Takeout</a> which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.</p>
+<p>Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad</p>
+<h2 id="organization">Organization<a hidden class="anchor" aria-hidden="true" href="#organization">#</a></h2>
+<p>One of the most common comments I get from family and friends is that photos in either web browser through Nextcloud shared links or piwigo app take forever to load, and it makes sense, full sized glory usually meant 17+ MB per file… <em>*me mentally kicking myself</em></p>
+<p>While I will be backing up my pictures in all their full sized glory, I decided to also create a compressed images directory for easy sharing through Nextcloud shared links and/or faster viewing in my Piwigo private, password protected photo albums both on a web browser and the mobile app.</p>
+<p>The setup is a bit weird, while my <a href="https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/">raspberry pi yunohost server</a> boots up from an external HDD, and every Yunohost app lives there, I want most of the content to live in one of my 2 x 1 TB RAID1 arrays (All in all I have 5 SATA drives attached to the raspberry pi server).</p>
+<p>Nextcloud was not a problem since it supports adding external drives, it lists my 2 RAID arrays as storage0 and storage1, however the other apps were tricker to setup. Both Piwigo and WordPress don’t play well with external drives or they don’t offer any option to use them so, teaks…</p>
+<p>Without going too much into details, most of the Yunohost apps follow the path <code>/var/www/&lt;app_name&gt;</code> so I created symlinks pointing to directories in either storage0 or storage1 for both Piwigo and WordPress, that way I get to see the files in Nextcloud as well. Piwigo example:</p>
+<p>I navigated to <code>/var/www/piwigo/galleries</code>, which is the directory scanned to add new albums in Piwigo, then I did:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo ln -s /home/admin/media/storage0/Photos/&lt;insert_album_name&gt; &lt;insert_album_name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Which basically follows the convention <code>sudo ln -s &lt;existing_directory&gt; &lt;name_of_the_link&gt;</code></p>
+<p>I haven’t found a way to batch process this, I could set up a single symlink to a single directory in storage0 and make piwigo scan subfolders but that would make a huge album with a ton of sub-albums, so I do this on a directory by directory basis by hand</p>
+<h2 id="compression">Compression<a hidden class="anchor" aria-hidden="true" href="#compression">#</a></h2>
+<p>The approach is simple, just run my compression script recursively through all the album directories</p>
+<h3 id="compression-comparison-shortpixel-vs-my-own-script">Compression comparison: Shortpixel vs my own script<a hidden class="anchor" aria-hidden="true" href="#compression-comparison-shortpixel-vs-my-own-script">#</a></h3>
+<p>As I mentioned before, I was using <a href="https://shortpixel.com/online-image-compression">Shortpixel</a> to compress pictures for my blog posts, but my entire photo library is a pretty big task more suited to do in batches, which is why decided to use my own <a href="https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/">optimization/resizing script</a>.</p>
+<p>Just for fun and because <a href="https://fosstodon.org/@ndanes">@ndanes</a> gave me the idea I thought I would compare both approaches:</p>
+<table>
+<thead>
+<tr>
+<th>Original Image size</th>
+<th>compressed with script</th>
+<th>shortpixel lossy</th>
+<th>shortpixel glossy</th>
+<th>shortpixel lossless</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17.7 MB</td>
+<td>186.2 KB</td>
+<td>64 KB</td>
+<td>124 KB</td>
+<td>149.6 KB</td>
+</tr>
+</tbody>
+</table>
+<p>Only did one picture but this gives a rough idea</p>
+<p>Wanna see the files? here’s a <a href="https://lopeztel.noho.st/nextcloud/s/37ELj2ss6CSrdmY">link</a> (WordPress may compress images further and this is the only way I found to share the image results)</p>
+<p>Some findings:</p>
+<ul>
+<li>I discovered shortpixel has a limit of 18.27MB per file</li>
+<li>Lossy and Glossy compression seem to mess with the white balance, slightly bluer. Which is a no no if you’re trying to show that perfect picture you took your sweet time taking and editing</li>
+<li>Script is slightly less efficient but retains a high level of quality and doesn’t mess with white balance, results are comparable to lossless compression in short pixel</li>
+</ul>
+<p>Given the fact that I am going to be processing loads of files the script way seems good enough, plus it is also possible to tweak further to shave off some KBs but I’m quite happy with the current results.</p>
+<h2 id="upload">Upload<a hidden class="anchor" aria-hidden="true" href="#upload">#</a></h2>
+<p>Now, this is probably the most inefficient step of the process because I haven’t been able to find the time to setup FTP access to my files to I usually did access to Nextcloud (which in turns writes/reads to/from storage0 and storage1) by webdav or web interface to upload/download files. Needless to say this is a time consuming task</p>
+<p>That’s it, questions, comments, improvements? (I’d really appreciate those)</p>
+<hr>
+<p>Day 49 of my 2020’s <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+<p>Join <a href="https://100daystooffload.com/">100DaysToOffload</a>!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/nextcloud/">Nextcloud</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/piwigo/">piwigo</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/raspberrypi/">Raspberrypi</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/tutorial/">Tutorial</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/yunohost/">yunohost</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lopeztel.xyz/blog/2021/02/21/my-neovim-cheatsheet/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>My (Neo)Vim Cheatsheet</span>
+  </a>
+  <a class="next" href="https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Upgrading my rig</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

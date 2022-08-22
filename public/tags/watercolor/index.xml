@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Watercolor on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/watercolor/</link>
+    <description>Recent content in Watercolor on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jun 2020 20:00:09 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/watercolor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux and Art mix</title>
+      <link>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</link>
+      <pubDate>Thu, 25 Jun 2020 20:00:09 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</guid>
+      <description>I just felt the need to document my latest Linux issues:
+First, some context, I like painting with watercolor and have been doing it for quite a while now but in the last couple of years material such as paper (I used Arches 300g) has become quite expensive, which made me think that perhaps it was about time to go digital.
+After buying a cheapo digitizer tablet (a tiny one by the chinese brand Huion) I came across my first issue: doesn’t work “out of the box” on linux (specifically Manjaro); long story short and after some research my eyes came across the DIGImend project, turns out that these guys have been creating drivers for all sorts of digitizer tablets out there and mine was on the list, but it gets better, it is in the AUR!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GamingOnLinux on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/gamingonlinux/</link>
+    <description>Recent content in GamingOnLinux on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Feb 2021 20:26:59 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/gamingonlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrading my rig</title>
+      <link>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</link>
+      <pubDate>Fri, 05 Feb 2021 20:26:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</guid>
+      <description>I finally got to make some upgrades to my desktop computer!
+Before Just for context, my desktop computer was a hand-me-down that a friend just gave me because he had gotten a much better one. I took it and played around with it. After all these years this was the first time I owned a computer with a dedicated GPU (I know, sad but true)
+These were the specs:
+Motherboard CPU GPU GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
+    </item>
+    
+  </channel>
+</rss>

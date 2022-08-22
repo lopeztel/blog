@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Privacy on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/privacy/</link>
+    <description>Recent content in Privacy on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Nov 2020 16:53:14 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Privacy Resources and ongoing translation efforts</title>
+      <link>https://lopeztel.xyz/blog/2020/11/23/privacy-resources-and-ongoing-translation-efforts/</link>
+      <pubDate>Mon, 23 Nov 2020 16:53:14 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/23/privacy-resources-and-ongoing-translation-efforts/</guid>
+      <description>Humanetech Translation Project Otherwise known as HTP (I personally prefer HTTP 😛 ), is a little project that started on the Humane Tech Community forum after my little comment about privacy related content available mostly in English, see this entry for context.
+The project has officially started and is looking for translators, so if anyone is interested please head here, apparently we’ve gathered quite a few translators already but it’s always nice to have more!</description>
+    </item>
+    
+    <item>
+      <title>Convenience vs Privacy (Round 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/09/30/convenience-vs-privacy-round-2/</link>
+      <pubDate>Wed, 30 Sep 2020 17:55:12 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/09/30/convenience-vs-privacy-round-2/</guid>
+      <description>Context For a while now I’ve been trying to find ways to convey the risks of social media and the importance of privacy to my non-tech savvy family members, in a previous entry I went over getting away from WhatsApp (Facebook really) and using element connected to my own self hosted synapse server.
+The Social Dilemma Two weeks ago I watched The Social Dilemma on Netflix, which I really enjoyed. To elaborate further these are my main take aways:</description>
+    </item>
+    
+    <item>
+      <title>Convenience vs Privacy (Round 1)</title>
+      <link>https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/</link>
+      <pubDate>Fri, 04 Sep 2020 19:13:54 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/</guid>
+      <description>A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…
+A while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:
+Signal requires a phone number and depends on centralized servers.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Indieweb on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/indieweb/</link>
+    <description>Recent content in Indieweb on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Aug 2020 11:15:25 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/indieweb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migration to WordPress</title>
+      <link>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</link>
+      <pubDate>Sun, 16 Aug 2020 11:15:25 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</guid>
+      <description>In recent days I’ve been busy trying to get my blog up and running on my cheapo Raspberry Pi + Yunohost server setup. The process was fun, so here’s a blog entry about migrating my blog (blogception?) from a writefreely instance to my self hosted wordpress instance.
+Why though? To put it simply: because I can.
+On a more serious note, my previous blog was hosted at qua.name and there was nothing wrong with it, but I really wanted to be able to have a bit more interaction, easy theming, and an overall a plug and play solution with a GUI.</description>
+    </item>
+    
+  </channel>
+</rss>

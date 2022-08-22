@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Neovim on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/neovim/</link>
+    <description>Recent content in Neovim on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Feb 2021 16:32:14 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/neovim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My (Neo)Vim Cheatsheet</title>
+      <link>https://lopeztel.xyz/blog/2021/02/21/my-neovim-cheatsheet/</link>
+      <pubDate>Sun, 21 Feb 2021 16:32:14 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/21/my-neovim-cheatsheet/</guid>
+      <description>I’ve been learning to use neovim for almost 3 weeks now and it has been fun, coming from VSCode I guess I was spoiled by the feature rich IDE/text editor, however there is beauty in the simplicity keyboard oriented (Neo)vim text editor
+I’ve been trying to get all the useful keyboard shortcuts and commands I’ve found in a single place and I though this could be helpful for other noobs like me, fosstodon community was helpful and shared their Tips n’ Tricks as well.</description>
+    </item>
+    
+  </channel>
+</rss>

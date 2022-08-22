@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nextcloud on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/nextcloud/</link>
+    <description>Recent content in Nextcloud on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Feb 2021 18:59:15 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/nextcloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migration from Google Photos to Nextcloud and Piwigo</title>
+      <link>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</link>
+      <pubDate>Sat, 13 Feb 2021 18:59:15 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</guid>
+      <description>Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad</description>
+    </item>
+    
+  </channel>
+</rss>

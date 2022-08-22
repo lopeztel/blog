@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Raspberrypi on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/raspberrypi/</link>
+    <description>Recent content in Raspberrypi on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Feb 2021 18:59:15 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migration from Google Photos to Nextcloud and Piwigo</title>
+      <link>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</link>
+      <pubDate>Sat, 13 Feb 2021 18:59:15 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</guid>
+      <description>Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad</description>
+    </item>
+    
+    <item>
+      <title>Optimizing my yunohost wordpress blog</title>
+      <link>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</link>
+      <pubDate>Sat, 22 Aug 2020 10:07:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</guid>
+      <description>After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .</description>
+    </item>
+    
+    <item>
+      <title>My Raspberry Pi server with yunohost</title>
+      <link>https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/</link>
+      <pubDate>Sat, 08 Aug 2020 20:37:35 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/</guid>
+      <description>I will try to make this entry resemble a tutorial, hopefully this ends up being useful to someone.
+Why start over? I had been playing around with Open Media Vault before (see this entry for details), but it was mainly based on docker images and I could never get Nextcloud up and running (the closest I came was installing nextcloudpi, but I could never get the docker image to run using external storage).</description>
+    </item>
+    
+    <item>
+      <title>Thank you yunohost</title>
+      <link>https://lopeztel.xyz/blog/2020/08/06/thank-you-yunohost/</link>
+      <pubDate>Thu, 06 Aug 2020 06:00:03 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/06/thank-you-yunohost/</guid>
+      <description>Ever since I started looking into the Fediverse, FOSS/FLOSS, privacy and self-hosting I was pleasantly surprised by how engaging and helpful the community can be.
+As an example: in Fosstodon all my interactions have been very nice, from sharing random unrelated stuff to asking for advice on more technical matters everyone has always been helpful and willing to give advice.
+Another great experience I had recently was related with the yunohost project (long story short, my Open Media Vault setup went down in flames, tutorial coming shortly), being kind of a big project one would think that as an individual, communication would be slow or hard, kind of like with companies as a consumer.</description>
+    </item>
+    
+    <item>
+      <title>The journey to self-hosting (on a Raspberrypi 4)</title>
+      <link>https://lopeztel.xyz/blog/2020/07/07/the-journey-to-self-hosting-on-a-raspberrypi-4/</link>
+      <pubDate>Tue, 07 Jul 2020 20:12:55 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/07/07/the-journey-to-self-hosting-on-a-raspberrypi-4/</guid>
+      <description>Ever since discovering the Fediverse and reading toots from awesome people in Fosstodon, a little idea started to take shape in my head: perhaps its not that hard to self host, there are tons of tutorials and resources out there…And I need some alternative to google photos to share albums with my family back home
+Hardware After some research and settled for a RaspberryPi server/NAS, now, the purists will say that it is not the ideal platform to host but I think it is perfect to get started and learn the basics or as a hobby, then you can move on to the big boy fancy server hardware.</description>
+    </item>
+    
+  </channel>
+</rss>

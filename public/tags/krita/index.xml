@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Krita on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/krita/</link>
+    <description>Recent content in Krita on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Nov 2020 14:14:20 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/krita/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts on the pinebookpro (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</link>
+      <pubDate>Sat, 14 Nov 2020 14:14:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</guid>
+      <description>This is a follow-up to this entry.
+This time I’ll try to describe more day to day use (at least mine):
+Generic tasks The most simple task I use a computer for is writing entries for my blog, as I mentioned before I love the Markdown format… I’ve found a perfectly good FOSS replacement for Typora, which is also available for aarch64, so I am now using Ghostwriter.
+Speaking of typing, I’ve been using the keyboard on the pinebookpro for a while now and it is quite good for the price, no premium feeling to it but it feels sturdy and the keys have decent travel, so that’s ok.</description>
+    </item>
+    
+    <item>
+      <title>FOSS Donations</title>
+      <link>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</link>
+      <pubDate>Wed, 26 Aug 2020 16:58:45 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</guid>
+      <description>Let me start by saying that the purpose of this entry is not to say “Look at how selfless I am for donating money to FOSS organizations or projects” so, with that in mind, I will not list any specific quantities because that is not the point I am trying to make. Having written the proper disclaimer, let’s get to it:
+My preferences In the past month I have written about my projects and experiences with FOSS, self hosting and even digital art.</description>
+    </item>
+    
+    <item>
+      <title>Linux and Art mix</title>
+      <link>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</link>
+      <pubDate>Thu, 25 Jun 2020 20:00:09 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</guid>
+      <description>I just felt the need to document my latest Linux issues:
+First, some context, I like painting with watercolor and have been doing it for quite a while now but in the last couple of years material such as paper (I used Arches 300g) has become quite expensive, which made me think that perhaps it was about time to go digital.
+After buying a cheapo digitizer tablet (a tiny one by the chinese brand Huion) I came across my first issue: doesn’t work “out of the box” on linux (specifically Manjaro); long story short and after some research my eyes came across the DIGImend project, turns out that these guys have been creating drivers for all sorts of digitizer tablets out there and mine was on the list, but it gets better, it is in the AUR!</description>
+    </item>
+    
+  </channel>
+</rss>

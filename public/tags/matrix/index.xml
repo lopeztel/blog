@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Matrix on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/matrix/</link>
+    <description>Recent content in Matrix on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Aug 2020 16:58:45 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/matrix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FOSS Donations</title>
+      <link>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</link>
+      <pubDate>Wed, 26 Aug 2020 16:58:45 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</guid>
+      <description>Let me start by saying that the purpose of this entry is not to say “Look at how selfless I am for donating money to FOSS organizations or projects” so, with that in mind, I will not list any specific quantities because that is not the point I am trying to make. Having written the proper disclaimer, let’s get to it:
+My preferences In the past month I have written about my projects and experiences with FOSS, self hosting and even digital art.</description>
+    </item>
+    
+    <item>
+      <title>Progress report on a more FOSS/FLOSS, decentralized digital life</title>
+      <link>https://lopeztel.xyz/blog/2020/08/09/progress-report-on-a-more-foss-floss-decentralized-digital-life/</link>
+      <pubDate>Sun, 09 Aug 2020 06:00:57 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/09/progress-report-on-a-more-foss-floss-decentralized-digital-life/</guid>
+      <description>For context, let me refer to my very first entry, the idea was basically looking for alternatives, so here’s the long awaited progress report:
+Changes already in place Using Mastodon instead of Twitter Using Pixelfed instead of Instagram (On Android) Using NewPipe instead of YouTube, this one is quite cool, it has all the features you’d want: Download, Picture in Picture mode, Background Music reproduction… Using Writefreely and/or WordPress (Still haven’t decided) instead of other blogging platforms (On Android) Using Signal instead of WhatsApp, although that may change in the near future Using Jitsi Meet instead of Skype, Zoom, Google Hangouts Using Protonmail instead of Gmail (although not sure if FOSS/FLOSS, they maintain an OpenPGP library) (On Android) Using Simple Mobile Tools SMS Messenger instead of Google Messages Using Simple Mobile Tools Gallery instead of Google Photos Using Bitwarden instead of LastPass (On Android) Using andOTP (at least for personal stuff) Using F-Droid instead of the Google Play Store whenever possible Changes in transition period Self-hosted Nextcloud instead of Dropbox, Google Drive, One Drive… Self-hosted Gitea instead of Github (currently only mirroring) Self-hosted Piwigo gallery instead of Google Photos (more info on my setup here) Self-hosted email (problems with outgoing port 25) Self-hosted Synapse (Matrix server) in testing phase, could replace Signal by Element if tests show promising results Calendar synchronization using Nextcloud instead of Google Calendar (Android apps: Simple Mobile Tools Calendar, DAVX5 and OpenTasks) (On Android) Trying to use OsmAnd instead of Google Maps (This is by far the hardest change to be made) Compromises Facebook is still the platform where everyone plans events so I need that just to follow-up on them (not actively in use) Whatsapp and Facebook messenger as backup messaging (Trying to move friends and family over to Signal or Element) Can’t seem to get away from Microsoft: Teams, Outlook and Microsoft Authenticator are used for work Day 11 of #100DaysToOffload</description>
+    </item>
+    
+  </channel>
+</rss>

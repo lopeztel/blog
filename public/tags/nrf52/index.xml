@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>nRF52 on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/nrf52/</link>
+    <description>Recent content in nRF52 on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Sep 2021 18:45:53 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/nrf52/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making a bluetooth split keyboard part 2</title>
+      <link>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</link>
+      <pubDate>Wed, 15 Sep 2021 18:45:53 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</guid>
+      <description>This is a followup on a previous entry
+It has been a while since I last wrote about this but I’ve been busy:
+Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse and bought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
+    </item>
+    
+    <item>
+      <title>Making a bluetooth split keyboard (Part 1-a)</title>
+      <link>https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/</link>
+      <pubDate>Mon, 05 Jul 2021 19:00:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/</guid>
+      <description>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
+I found some instructions in blackmagic-bluepill to follow
+I’ll try to summarize:
+wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
+    </item>
+    
+    <item>
+      <title>Infinitime 1.2-0 on PineTime, from scratch</title>
+      <link>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</link>
+      <pubDate>Sat, 26 Jun 2021 19:00:00 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</guid>
+      <description>It seems that it is normal for me to buy stuff/parts/devkits and let them accumulate some dust before getting back to the project pile …
+Just recently I read on the Pine64 Blog June update that Infinitime 1.2 was coming soon… Then I remembered I had ordered a PineTime devkit (part of the first batch ever actually) so I decided to find it and flash working firmware on it…
+I attempted to flash it with a STM bluepill Black Magic Probe first:</description>
+    </item>
+    
+    <item>
+      <title>Making a bluetooth split keyboard (part 1)</title>
+      <link>https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/</link>
+      <pubDate>Wed, 02 Jun 2021 19:04:16 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/</guid>
+      <description>It’s been a while since I last posted something remotely technical so I thought this would do this entry
+All the work is based on the Lily58 split keyboard, we will be using the nRFmicro board, which in turn will be the brain of each keyboard half
+The first step was to make the nRFmicro board using the soldering guide in the repo, needless to say the process was complicated but a very good excuse to use my new Pinecil</description>
+    </item>
+    
+  </channel>
+</rss>

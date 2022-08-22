@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>esp8266 on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/esp8266/</link>
+    <description>Recent content in esp8266 on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jul 2021 09:21:50 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/esp8266/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RGB WiFi enabled lamp (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2021/07/01/rgb-wifi-enabled-lamp-part-2/</link>
+      <pubDate>Thu, 01 Jul 2021 09:21:50 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/07/01/rgb-wifi-enabled-lamp-part-2/</guid>
+      <description>As promised in my previous entry, I’ll go into some details related to how I implemented effects on my RGB Lamp:
+All the code is available at my github repo or the mirror repo on my self-hosted gitea instance
+The idea is to have mqtt messages triggering different behavior in my code, the design consists in triggering a periodic function to change LED RGB values depending on the message topic and payload</description>
+    </item>
+    
+    <item>
+      <title>RGB WiFi enabled lamp (Part 1)</title>
+      <link>https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/</link>
+      <pubDate>Thu, 24 Jun 2021 18:47:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/</guid>
+      <description>Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp
+The inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts</description>
+    </item>
+    
+  </channel>
+</rss>

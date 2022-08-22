@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My transition from VSCode to Neovim | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, Manjaro, Tutorial">
+<meta name="description" content="I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger">
+<meta name="author" content="lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="My transition from VSCode to Neovim" />
+<meta property="og:description" content="I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-28T19:32:15&#43;00:00" />
+<meta property="article:modified_time" content="2021-01-28T19:32:15&#43;00:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My transition from VSCode to Neovim"/>
+<meta name="twitter:description" content="I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "My transition from VSCode to Neovim",
+      "item": "https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My transition from VSCode to Neovim",
+  "name": "My transition from VSCode to Neovim",
+  "description": "I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger",
+  "keywords": [
+    "100DaysToOffload", "Manjaro", "Tutorial"
+  ],
+  "articleBody": "I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger\nI know that a lot of people use them and once you’re over the steep learning curve you can be very productive with just a keyboard, but it was only recently that I took an interest because a friend of mine pointed out that you can have auto-completion and other cool stuff in neovim (if I understand correctly it is a rewrite of vim) by means of tweaking the setup and some plugins, very much á la VSCode, which is my main text/code editor of choice.\nI know, I know, I’m late to the legit text editor party but I always assumed vim/neovim was just ugly/simple text editor… I’ve been living a lie\nThe Neovim setup So I took a deep dive and with some pointers from my friend I installed neovim and proceeded to tweak. This post will attempt to document the process. I use Manjaro linux but I can imagine the process would be similar for other distros. I’ll try to include some links.\nI started by installing neovim:\nsudo pacman -S neovim\nThen, I was pointed to to an easy way to deal with plugins: vim-plug, careful, there’s a different section for vim and neovim\n1 2 sh -c 'curl -fLo \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \\ https:\u0026#47;\u0026#47;raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' Then proceeded to create init.vim (kinda like neovim’s .bashrc), the complete path is HOME/.config/neovim/init.vim\n1 2 3 4 5 6 7 8 9 10 \" lopeztel vim config call plug#begin('~/.vim/plugged') Plug 'plasticboy/vim-markdown' Plug 'arcticicestudio/nord-vim' Plug 'preservim/nerdtree' Plug 'vim-airline/vim-airline' call plug#end() To install the plugins within neovim, change to COMMAND mode (press ESC) and type:\n:PlugInstall\nThis splits the window to the left, it displays the plugin list and installation status.\nsome useful things to know:\nto edit files in vim/neovim, change to EDIT mode (press I) to save files in vim/neovim, change to COMMAND mode (press ESC) and type :w to close/quit in vim/neovim, change to COMMAND mode (press ESC) and type :q, :q! to discard any unsaved changes A bit on the plugins:\nChanging to COMMAND mode and typing :NERDTree will split the window to the left and show a file tree (VSCode like), see nerdtree for more info nord-vim and vim-airline are more eye candy than anything, the first one installs the Nord theme‘s color palette, and the second one makes the status/tabline in neovim more visually pleasing This is the overall look:\nOn to the functional stuff, since most of my work is C/C++ I decided to install Conquer of Completion or coc.vim, which according to their github it is supposed to “Make your Vim/Neovim as smart as VSCode.”.\nFirst I had to install nodejs, their page provides a one liner but it didn’t work for me, so I did:\nsudo pacman -S nodejs\nAlso, a language server is necessary, I found that either ccls or clangd are options, I installed ccls based on a quick online search\nsudo pacman -S ccls\nAfter that I installed the coc plugin with the vim-plug method described above (adding the line Plug 'neoclide/coc.nvim', {'branch': 'release'} to the corresponding section in init.vim). It is important to append the text from the example vim configuration to init.vim (quite long so I won’t put it here)\nThere are some other configurations needed for specific language support, a config file can be opened by changing to COMMAND mode and typing\n:CocConfig\nWhich opens a file called coc-settings.json, contained in the same path as init.vim, here’s how mine is configured for C/C++:\n1 2 3 4 5 6 7 8 9 10 11 12 languageserver\": { \"ccls\": { \"command\": \"ccls\", \"filetypes\": \u0026#91;\"c\", \"cpp\", \"objc\", \"objcpp\"], \"rootPatterns\": \u0026#91;\".ccls\", \"compile_commands.json\", \".vim/\", \".git/\", \".hg/\"], \"initializationOptions\": { \"cache\": { \"directory\": \"/tmp/ccls\" } } } } More configurations in the coc.vim wiki\nNow what? Now that I have a fully working installation it is time to learn to use neovim, I’ll probably spend some time on the tutorial (:Tutor in COMAND mode). In the meantime I’ll still use VSCode when in a rush to get things done\nMore eyecandy My discovery of the Nord theme led me down a rabbit hole and I had to apply it to the gnome terminal and VSCode to match the look and feel. I also installed the powerlevel10k theme to my Zsh, while I was at it\n—\nDay 45 of my 2020’s #100DaysToOffload\nJoin 100DaysToOffload!\n",
+  "wordCount" : "811",
+  "inLanguage": "en",
+  "datePublished": "2021-01-28T19:32:15Z",
+  "dateModified": "2021-01-28T19:32:15Z",
+  "author":{
+    "@type": "Person",
+    "name": "lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      My transition from VSCode to Neovim
+    </h1>
+    <div class="post-meta"><span title='2021-01-28 19:32:15 +0000 +0000'>January 28, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;lopeztel
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#the-neovim-setup" aria-label="The Neovim setup">The Neovim setup</a></li>
+                <li>
+                    <a href="#now-what" aria-label="Now what?">Now what?</a></li>
+                <li>
+                    <a href="#more-eyecandy" aria-label="More eyecandy">More eyecandy</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use <a href="https://www.gnu.org/software/emacs/">emacs</a> or <a href="https://www.vim.org/">vim</a>. I am in the middle of transitioning to CLI based programs, on a previous post I described <a href="https://lopeztel.xyz/blog/2020/12/17/some-cli-awesomeness/">ncspot and mpsyt</a>, I’ve also been looking at <a href="https://github.com/tulir/gomuks">gomuks</a> and <a href="https://github.com/ranger/ranger">ranger</a></p>
+<p>I know that a lot of people use them and once you’re over the steep learning curve you can be very productive with just a keyboard, but it was only recently that I took an interest because a friend of mine pointed out that you can have auto-completion and other cool stuff in <a href="https://neovim.io/">neovim</a> (if I understand correctly it is a rewrite of vim) by means of tweaking the setup and some plugins, very much <em>á la</em> VSCode, which is my main text/code editor of choice.</p>
+<p>I know, I know, I’m late to the legit text editor party but I always assumed vim/neovim was just ugly/simple text editor… I’ve been living a lie</p>
+<h2 id="the-neovim-setup">The Neovim setup<a hidden class="anchor" aria-hidden="true" href="#the-neovim-setup">#</a></h2>
+<p>So I took a deep dive and with some pointers from my friend I installed neovim and proceeded to tweak. This post will attempt to document the process. I use Manjaro linux but I can imagine the process would be similar for other distros. I’ll try to include some links.</p>
+<p>I started by installing neovim:</p>
+<p><code>sudo pacman -S neovim</code></p>
+<p>Then, I was pointed to to an easy way to deal with plugins: <a href="https://github.com/junegunn/vim-plug">vim-plug</a>, careful, there’s a different section for vim and neovim</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span><span class="lnt" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sh -c <span class="s1">&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
+</span></span></span><span class="line"><span class="cl"><span class="s1">       https:&amp;#47;&amp;#47;raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then proceeded to create <code>init.vim</code> (kinda like neovim’s .bashrc), the complete path is <code>HOME/.config/neovim/init.vim</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1</a>
+</span><span class="lnt" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2</a>
+</span><span class="lnt" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3</a>
+</span><span class="lnt" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4</a>
+</span><span class="lnt" id="hl-1-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5</a>
+</span><span class="lnt" id="hl-1-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6</a>
+</span><span class="lnt" id="hl-1-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7</a>
+</span><span class="lnt" id="hl-1-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8</a>
+</span><span class="lnt" id="hl-1-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9</a>
+</span><span class="lnt" id="hl-1-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="c">&#34; lopeztel vim config</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">call</span> <span class="nx">plug</span>#<span class="nx">begin</span><span class="p">(</span><span class="s1">&#39;~/.vim/plugged&#39;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;plasticboy/vim-markdown&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;arcticicestudio/nord-vim&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;preservim/nerdtree&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;vim-airline/vim-airline&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">call</span> <span class="nx">plug</span>#<span class="nx">end</span><span class="p">()</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>To install the plugins within neovim, change to <strong>COMMAND</strong> mode (press <em>ESC</em>) and type:</p>
+<p><code>:PlugInstall</code></p>
+<p>This splits the window to the left, it displays the plugin list and installation status.</p>
+<p>some useful things to know:</p>
+<ul>
+<li>to edit files in vim/neovim, change to <strong>EDIT</strong> mode (press <em>I</em>)</li>
+<li>to save files in vim/neovim, change to <strong>COMMAND</strong> mode (press <em>ESC</em>) and type <code>:w</code></li>
+<li>to close/quit in vim/neovim, change to <strong>COMMAND</strong> mode (press <em>ESC</em>) and type <code>:q</code>, <code>:q!</code> to discard any unsaved changes</li>
+</ul>
+<p>A bit on the plugins:</p>
+<ul>
+<li>Changing to COMMAND mode and typing <code>:NERDTree</code> will split the window to the left and show a file tree (VSCode like), see <a href="https://github.com/preservim/nerdtree">nerdtree</a> for more info</li>
+<li><a href="https://github.com/arcticicestudio/nord-vim">nord-vim</a> and <a href="https://github.com/vim-airline/vim-airline">vim-airline</a> are more eye candy than anything, the first one installs the <a href="https://www.nordtheme.com/">Nord theme</a>‘s color palette, and the second one makes the status/tabline in neovim more visually pleasing</li>
+</ul>
+<p>This is the overall look:</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/_data/i/galleries/blog_media/nvim-me.png#center" alt=""  />
+</p>
+<p>On to the functional stuff, since most of my work is C/C++ I decided to install Conquer of Completion or <a href="https://github.com/neoclide/coc.nvim">coc.vim</a>, which according to their github it is supposed to <em>“Make your Vim/Neovim as smart as VSCode.”</em>.</p>
+<p>First I had to install nodejs, their page provides a one liner but it didn’t work for me, so I did:</p>
+<p><code>sudo pacman -S nodejs</code></p>
+<p>Also, a language server is necessary, I found that either <a href="https://github.com/MaskRay/ccls">ccls</a> or <a href="https://clangd.llvm.org/">clangd</a> are options, I installed ccls based on a quick online search</p>
+<p><code>sudo pacman -S ccls</code></p>
+<p>After that I installed the coc plugin with the vim-plug method described above (adding the line <code>Plug 'neoclide/coc.nvim', {'branch': 'release'}</code> to the corresponding section in <code>init.vim</code>). It is important to append the text from the <a href="https://github.com/neoclide/coc.nvim#example-vim-configuration">example vim configuration</a> to <code>init.vim</code> (quite long so I won’t put it here)</p>
+<p>There are some other configurations needed for specific language support, a config file can be opened by changing to COMMAND mode and typing</p>
+<p><code>:CocConfig</code></p>
+<p>Which opens a file called <code>coc-settings.json</code>, contained in the same path as <code>init.vim</code>, here’s how mine is configured for C/C++:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1"> 1</a>
+</span><span class="lnt" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2"> 2</a>
+</span><span class="lnt" id="hl-2-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3"> 3</a>
+</span><span class="lnt" id="hl-2-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4"> 4</a>
+</span><span class="lnt" id="hl-2-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5"> 5</a>
+</span><span class="lnt" id="hl-2-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6"> 6</a>
+</span><span class="lnt" id="hl-2-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-7"> 7</a>
+</span><span class="lnt" id="hl-2-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-8"> 8</a>
+</span><span class="lnt" id="hl-2-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-9"> 9</a>
+</span><span class="lnt" id="hl-2-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-10">10</a>
+</span><span class="lnt" id="hl-2-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-11">11</a>
+</span><span class="lnt" id="hl-2-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-12">12</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">languageserver</span><span class="s2">&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;</span><span class="err">ccls</span><span class="s2">&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s2">      &#34;</span><span class="err">command</span><span class="s2">&#34;: &#34;</span><span class="err">ccls</span><span class="s2">&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s2">      &#34;</span><span class="err">filetypes</span><span class="s2">&#34;: &amp;#91;&#34;</span><span class="err">c</span><span class="s2">&#34;, &#34;</span><span class="err">cpp</span><span class="s2">&#34;, &#34;</span><span class="err">objc</span><span class="s2">&#34;, &#34;</span><span class="err">objcpp</span><span class="s2">&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="s2">      &#34;</span><span class="err">rootPatterns</span><span class="s2">&#34;: &amp;#91;&#34;</span><span class="err">.ccls</span><span class="s2">&#34;, &#34;</span><span class="err">compile_commands.json</span><span class="s2">&#34;, &#34;</span><span class="err">.vim/</span><span class="s2">&#34;, &#34;</span><span class="err">.git/</span><span class="s2">&#34;, &#34;</span><span class="err">.hg/</span><span class="s2">&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="s2">      &#34;</span><span class="err">initializationOptions</span><span class="s2">&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s2">         &#34;</span><span class="err">cache</span><span class="s2">&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s2">           &#34;</span><span class="err">directory</span><span class="s2">&#34;: &#34;</span><span class="err">/tmp/ccls&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="err">}</span>
+</span></span><span class="line"><span class="cl">       <span class="err">}</span>
+</span></span><span class="line"><span class="cl">    <span class="err">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>More configurations in the <a href="https://github.com/neoclide/coc.nvim/wiki/Language-servers#ccobjective-c">coc.vim wiki</a></p>
+<h2 id="now-what">Now what?<a hidden class="anchor" aria-hidden="true" href="#now-what">#</a></h2>
+<p>Now that I have a fully working installation it is time to learn to use neovim, I’ll probably spend some time on the tutorial (<code>:Tutor</code> in <strong>COMAND</strong> mode). In the meantime I’ll still use VSCode when in a rush to get things done</p>
+<h2 id="more-eyecandy">More eyecandy<a hidden class="anchor" aria-hidden="true" href="#more-eyecandy">#</a></h2>
+<p>My discovery of the Nord theme led me down a rabbit hole and I had to apply it to the <a href="https://github.com/arcticicestudio/nord-gnome-terminal">gnome terminal</a> and <a href="https://www.nordtheme.com/ports/visual-studio-code">VSCode</a> to match the look and feel. I also installed the <a href="https://github.com/romkatv/powerlevel10k#oh-my-zsh">powerlevel10k</a> theme to my Zsh, while I was at it</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/_data/i/galleries/blog_media/nord_theme-me.png#center" alt=""  />
+</p>
+<p>—</p>
+<p>Day 45 of my 2020’s <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+<p>Join <a href="https://100daystooffload.com/">100DaysToOffload</a>!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/manjaro/">Manjaro</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/tutorial/">Tutorial</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Fooling around with bash scripts</span>
+  </a>
+  <a class="next" href="https://lopeztel.xyz/blog/2021/01/21/my-blogging-journey-so-far/">
+    <span class="title">Next »</span>
+    <br>
+    <span>My blogging journey so far</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

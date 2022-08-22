@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Manjaro on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/manjaro/</link>
+    <description>Recent content in Manjaro on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Feb 2021 20:26:59 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrading my rig</title>
+      <link>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</link>
+      <pubDate>Fri, 05 Feb 2021 20:26:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</guid>
+      <description>I finally got to make some upgrades to my desktop computer!
+Before Just for context, my desktop computer was a hand-me-down that a friend just gave me because he had gotten a much better one. I took it and played around with it. After all these years this was the first time I owned a computer with a dedicated GPU (I know, sad but true)
+These were the specs:
+Motherboard CPU GPU GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
+    </item>
+    
+    <item>
+      <title>Fooling around with bash scripts</title>
+      <link>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</link>
+      <pubDate>Tue, 02 Feb 2021 19:13:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</guid>
+      <description>I thought I would share 2 shell scripts that I’ve found useful, the first one allows me to to use my DSLR camera as a webcam and the second one allows me to batch resize and optimize images
+Using DSLR as webcam This is probably most useful in COVID-19 times, found it a while back on YouTube (not a fan of the big G? Invidious or FreeTube are your friends), also here’s a blog post for more details.</description>
+    </item>
+    
+    <item>
+      <title>My transition from VSCode to Neovim</title>
+      <link>https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/</link>
+      <pubDate>Thu, 28 Jan 2021 19:32:15 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/</guid>
+      <description>I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger</description>
+    </item>
+    
+    <item>
+      <title>Some CLI awesomeness</title>
+      <link>https://lopeztel.xyz/blog/2020/12/17/some-cli-awesomeness/</link>
+      <pubDate>Thu, 17 Dec 2020 20:30:53 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/17/some-cli-awesomeness/</guid>
+      <description>I’ll have to confess I wasn’t always a fan of CLI applications, I come from a world were all I knew was GUI. I even thought that the heavy use of terminal emulators and CLI apps was snobbish, you know, the feeling was kind of like when (some) people say “BTW, I use Arch” I used to roll my eyes internally.
+Yet, here I am writing about CLI apps and how awesome they are…</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 4)</title>
+      <link>https://lopeztel.xyz/blog/2020/12/06/thoughts-on-the-pinebookpro-part-4/</link>
+      <pubDate>Sun, 06 Dec 2020 13:52:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/06/thoughts-on-the-pinebookpro-part-4/</guid>
+      <description>This is a follow-up on a previous entry
+Dealing with an external display A while back I ordered a USB-C dongle that I thought wasn’t working so I checked a list of USB Combination Devices that are compatible in the wiki, more specifically I had to wait for this USB-C dongle from aliexpress to get here.
+Turns out the new dongle didn’t work either, weird flicker when trying to switch to external display:</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 3)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</link>
+      <pubDate>Tue, 17 Nov 2020 18:24:11 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</guid>
+      <description>This is a follow-up on a previous entry
+One step closer to daily driver!!
+Working from home is possible with the pinebookpro I managed to connect to my workplace’s VPN, however it took some digging around: first of all, we have a Linux VPN package, so that’s already something, (kudos for showing Linux some love); you can choose to either install a .deb package, a .rpm package or build from source for either x86_64 or armhf architectures (basically just copies over some pre-compiled binaries), so far so good, everything great.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</link>
+      <pubDate>Sat, 14 Nov 2020 14:14:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</guid>
+      <description>This is a follow-up to this entry.
+This time I’ll try to describe more day to day use (at least mine):
+Generic tasks The most simple task I use a computer for is writing entries for my blog, as I mentioned before I love the Markdown format… I’ve found a perfectly good FOSS replacement for Typora, which is also available for aarch64, so I am now using Ghostwriter.
+Speaking of typing, I’ve been using the keyboard on the pinebookpro for a while now and it is quite good for the price, no premium feeling to it but it feels sturdy and the keys have decent travel, so that’s ok.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebook pro</title>
+      <link>https://lopeztel.xyz/blog/2020/10/23/thoughts-on-the-pinebook-pro/</link>
+      <pubDate>Fri, 23 Oct 2020 18:32:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/23/thoughts-on-the-pinebook-pro/</guid>
+      <description>Back in September I pulled the trigger and ordered a pinebook pro.
+Long story short: I declare myself a fanboy, the pinebook pro from pine64 is a very capable little machine.
+There are a lot of better written and more detailed blog posts/reviews of the pinebook pro out there already but just in case:
+For the uninitiated the pinebook pro is an ARM powered laptop (yes, pine64 did it before it was cool) based on the ROCKPro64 single board computer –Think Raspberrypi on steroids– here are the specs:</description>
+    </item>
+    
+    <item>
+      <title>Saving my /home partition with fsck</title>
+      <link>https://lopeztel.xyz/blog/2020/10/12/saving-my-home-partition-with-fsck/</link>
+      <pubDate>Mon, 12 Oct 2020 18:17:14 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/12/saving-my-home-partition-with-fsck/</guid>
+      <description>Let’s face it, part of the joy of Linux is solving unexpected problems you wouldn’t have with proprietary Operating Systems like Windows and MacOS. That being said this is my latest adventure:
+I turned on m computer and after the grub screen came up and I chose to boot into Manjaro (yes, the horror, I know dual booting Windows is not ideal but a necessary evil in my case). Something like this came up instead of the usual GUI login prompt:</description>
+    </item>
+    
+    <item>
+      <title>FOSS Donations</title>
+      <link>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</link>
+      <pubDate>Wed, 26 Aug 2020 16:58:45 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</guid>
+      <description>Let me start by saying that the purpose of this entry is not to say “Look at how selfless I am for donating money to FOSS organizations or projects” so, with that in mind, I will not list any specific quantities because that is not the point I am trying to make. Having written the proper disclaimer, let’s get to it:
+My preferences In the past month I have written about my projects and experiences with FOSS, self hosting and even digital art.</description>
+    </item>
+    
+    <item>
+      <title>Terminal bling</title>
+      <link>https://lopeztel.xyz/blog/2020/08/21/terminal-bling/</link>
+      <pubDate>Fri, 21 Aug 2020 18:15:46 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/21/terminal-bling/</guid>
+      <description>Followup on my previous entry related to my wallpaper. I just wanted my terminal to look nice since I spend quite some time on it. I use zsh by the way, but there are similar instructions for bash as well.
+I’ll just document the steps I followed (2 alternatives)
+powerline-shell Install powerline-shell (more configuration options in the Github repo):
+sudo pip install powerline-shell
+Add these lines to .zshrc:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&amp;#34;$(powerline-shell --shell zsh $?</description>
+    </item>
+    
+    <item>
+      <title>My nerdy wallpaper</title>
+      <link>https://lopeztel.xyz/blog/2020/08/17/my-nerdy-wallpaper/</link>
+      <pubDate>Mon, 17 Aug 2020 06:00:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/17/my-nerdy-wallpaper/</guid>
+      <description>Just recently I found an interesting package in AUR, it’s called pacwall. Since I use Manjaro the installation quite simple through pacman or pamac.
+The goal is simple, to have a visual representation of your installed packages and their dependencies. for more information and how to use it consult the repo
+I just typed:
+pacwall -D -S 1920x1080
+in my terminal to automatically set my desktop wall paper with the corresponding resolution and generate a corresponding .</description>
+    </item>
+    
+    <item>
+      <title>Linux and Art mix</title>
+      <link>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</link>
+      <pubDate>Thu, 25 Jun 2020 20:00:09 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</guid>
+      <description>I just felt the need to document my latest Linux issues:
+First, some context, I like painting with watercolor and have been doing it for quite a while now but in the last couple of years material such as paper (I used Arches 300g) has become quite expensive, which made me think that perhaps it was about time to go digital.
+After buying a cheapo digitizer tablet (a tiny one by the chinese brand Huion) I came across my first issue: doesn’t work “out of the box” on linux (specifically Manjaro); long story short and after some research my eyes came across the DIGImend project, turns out that these guys have been creating drivers for all sorts of digitizer tablets out there and mine was on the list, but it gets better, it is in the AUR!</description>
+    </item>
+    
+  </channel>
+</rss>

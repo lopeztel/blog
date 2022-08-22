@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>COVID-19 on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/covid-19/</link>
+    <description>Recent content in COVID-19 on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Dec 2020 19:11:18 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/covid-19/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Christmas 2020</title>
+      <link>https://lopeztel.xyz/blog/2020/12/29/christmas-2020/</link>
+      <pubDate>Tue, 29 Dec 2020 19:11:18 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/29/christmas-2020/</guid>
+      <description>This is meant to be a reflection on spending Christmas alone in one of the worst years for the planet in general.
+I think it’s basically beating on a dead horse to say that 2020 has been horrible in general due to COVID-19, everyone has had it tough for a lot of reasons, from the worst (having lost a loved one or health issues) to the minor annoyances (like working from home).</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 3)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</link>
+      <pubDate>Tue, 17 Nov 2020 18:24:11 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</guid>
+      <description>This is a follow-up on a previous entry
+One step closer to daily driver!!
+Working from home is possible with the pinebookpro I managed to connect to my workplace’s VPN, however it took some digging around: first of all, we have a Linux VPN package, so that’s already something, (kudos for showing Linux some love); you can choose to either install a .deb package, a .rpm package or build from source for either x86_64 or armhf architectures (basically just copies over some pre-compiled binaries), so far so good, everything great.</description>
+    </item>
+    
+    <item>
+      <title>Some thoughts about convenience and COVID-19</title>
+      <link>https://lopeztel.xyz/blog/2020/04/18/some-thoughts-about-convenience-and-covid-19/</link>
+      <pubDate>Sat, 18 Apr 2020 19:55:57 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/04/18/some-thoughts-about-convenience-and-covid-19/</guid>
+      <description>I was just recently thinking given the recent COVID-19 situation, the world is not ready to prioritize what is really important.
+It feels like no one really notices importance of services like running water, electricity and above all medical care. What I see on the news nowadays leads me to believe that no one really cares about anything as long as we’re not affected.
+No one cared about COVID-19 until we couldn’t go out, until our Amazon or Aliexpress and overall cheap stuff from China couldn’t reach us in time.</description>
+    </item>
+    
+    <item>
+      <title>Skiing and COVID-19</title>
+      <link>https://lopeztel.xyz/blog/2020/03/13/skiing-and-covid-19/</link>
+      <pubDate>Fri, 13 Mar 2020 19:52:08 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/03/13/skiing-and-covid-19/</guid>
+      <description>Some random thoughts on a recent failed ski trip and the global pandemic
+Skiing First things first, I have absolutely no clue on how to ski, zero experience whatsoever, so naturally I had to sign up for my company’s Ski trip. In total there were 37 people in the group.
+We got to a cabin close to a ski resort after a four and a half hour drive on Wednesday, all went well except for some icy paths on the way but that is another story (just don’t do summer tires and front 2 wheel drive on them, you’ll suffer a lot)</description>
+    </item>
+    
+  </channel>
+</rss>

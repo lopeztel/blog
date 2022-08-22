@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Fosstodon on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/fosstodon/</link>
+    <description>Recent content in Fosstodon on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Aug 2020 16:58:45 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/fosstodon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FOSS Donations</title>
+      <link>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</link>
+      <pubDate>Wed, 26 Aug 2020 16:58:45 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</guid>
+      <description>Let me start by saying that the purpose of this entry is not to say “Look at how selfless I am for donating money to FOSS organizations or projects” so, with that in mind, I will not list any specific quantities because that is not the point I am trying to make. Having written the proper disclaimer, let’s get to it:
+My preferences In the past month I have written about my projects and experiences with FOSS, self hosting and even digital art.</description>
+    </item>
+    
+  </channel>
+</rss>

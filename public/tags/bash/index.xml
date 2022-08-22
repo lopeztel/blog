@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bash on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/bash/</link>
+    <description>Recent content in Bash on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 20:52:46 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gnome Nord theme install script</title>
+      <link>https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/</link>
+      <pubDate>Fri, 06 May 2022 20:52:46 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/</guid>
+      <description>I’ll start this post by saying that I have a thing for the Nord theme, every time I clean install a system I go through the trouble of applying the theme to everything, which got me thinking that I could automate most of it, at least for my gnome installs.
+More info on Nord theme ports here
+My script (also available here) should:
+Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github.</description>
+    </item>
+    
+    <item>
+      <title>Fooling around with bash scripts 2</title>
+      <link>https://lopeztel.xyz/blog/2021/02/28/fooling-around-with-bash-scripts-2/</link>
+      <pubDate>Sun, 28 Feb 2021 13:20:27 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/28/fooling-around-with-bash-scripts-2/</guid>
+      <description>This is a follow-up to my previous entries: Fooling around with bash scripts, which I used as a base for Migration from Google Photos to Nextcloud and Piwigo
+Since some of my old picture albums have old .mov, .mpg and .avi videos in them I decided to also convert them to .mp4 (piwigo can show them in the albums), so once again I tried came up with something to automate the task</description>
+    </item>
+    
+    <item>
+      <title>Fooling around with bash scripts</title>
+      <link>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</link>
+      <pubDate>Tue, 02 Feb 2021 19:13:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</guid>
+      <description>I thought I would share 2 shell scripts that I’ve found useful, the first one allows me to to use my DSLR camera as a webcam and the second one allows me to batch resize and optimize images
+Using DSLR as webcam This is probably most useful in COVID-19 times, found it a while back on YouTube (not a fan of the big G? Invidious or FreeTube are your friends), also here’s a blog post for more details.</description>
+    </item>
+    
+  </channel>
+</rss>

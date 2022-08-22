@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>pinetime on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/pinetime/</link>
+    <description>Recent content in pinetime on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Jun 2021 19:00:00 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/pinetime/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infinitime 1.2-0 on PineTime, from scratch</title>
+      <link>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</link>
+      <pubDate>Sat, 26 Jun 2021 19:00:00 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</guid>
+      <description>It seems that it is normal for me to buy stuff/parts/devkits and let them accumulate some dust before getting back to the project pile …
+Just recently I read on the Pine64 Blog June update that Infinitime 1.2 was coming soon… Then I remembered I had ordered a PineTime devkit (part of the first batch ever actually) so I decided to find it and flash working firmware on it…
+I attempted to flash it with a STM bluepill Black Magic Probe first:</description>
+    </item>
+    
+  </channel>
+</rss>

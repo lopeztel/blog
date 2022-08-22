@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>RGB WiFi enabled lamp (Part 1) | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, esp8266, RGBLamp">
+<meta name="description" content="Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp
+The inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts">
+<meta name="author" content="lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="RGB WiFi enabled lamp (Part 1)" />
+<meta property="og:description" content="Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp
+The inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-24T18:47:13&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-24T18:47:13&#43;00:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RGB WiFi enabled lamp (Part 1)"/>
+<meta name="twitter:description" content="Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp
+The inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "RGB WiFi enabled lamp (Part 1)",
+      "item": "https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RGB WiFi enabled lamp (Part 1)",
+  "name": "RGB WiFi enabled lamp (Part 1)",
+  "description": "Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp\nThe inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts",
+  "keywords": [
+    "100DaysToOffload", "esp8266", "RGBLamp"
+  ],
+  "articleBody": "Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp\nThe inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts\nMy own personal touch Since I had already been tinkering with ESP8266 modules and looked into manipulating WS2812B based LED strips (such as the Adafruit Neopixel) and reverse engineered a bit of the Arduino library for my needs, it only made sense to integrate all into this project. There are some instructions that the creator of the original project kindly provides but I wanted a more barebones/DIY thing so instead of Arduino and HTTP requests, I am using PlatformIO and ESP8266-nonos-sdk to implement MQTT in plain old C. I also didn’t want Amazon Alexa integration so I replaced the Weemos D1 mini and the microphone the original project uses with a generic ESP-01 module and a ESP-01 RGB board\nBefore Before starting this project I already had some work done with my custom MQTT Dashboard project on raspberrypi 3B:\nSimple solid color change on a NeoPixel ring (16 LEDs)\nAfter I added some more custom effects to my code and tweaked the lamp base to have access to the reset button, the array is made up of 8 strips with 9 LEDs each (72 in total), which also required a power supply instead of batteries, I went with standard 5V/3A power supply\nThis is the final product:\nIn part two I’ll go into details for some (kind of crappy) low level C programming and RGB LED effects\nMore details in my github repo, also available from a mirrored repo on my self-hosted gitea instance\nDay 12 of my 2021’s #100DaysToOffload\nJoin 100DaysToOffload!\n",
+  "wordCount" : "332",
+  "inLanguage": "en",
+  "datePublished": "2021-06-24T18:47:13Z",
+  "dateModified": "2021-06-24T18:47:13Z",
+  "author":{
+    "@type": "Person",
+    "name": "lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      RGB WiFi enabled lamp (Part 1)
+    </h1>
+    <div class="post-meta"><span title='2021-06-24 18:47:13 +0000 +0000'>June 24, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#the-inspiration" aria-label="The inspiration">The inspiration</a></li>
+                <li>
+                    <a href="#my-own-personal-touch" aria-label="My own personal touch">My own personal touch</a></li>
+                <li>
+                    <a href="#before" aria-label="Before">Before</a></li>
+                <li>
+                    <a href="#after" aria-label="After">After</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp</p>
+<h2 id="the-inspiration">The inspiration<a hidden class="anchor" aria-hidden="true" href="#the-inspiration">#</a></h2>
+<p>On one of those days you end up searching for random stuff across the internet I came across a project called <a href="https://www.thingiverse.com/thing:4129249"><strong>Twisted WiFi-controlled Desk Lamp</strong></a> on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts</p>
+<h2 id="my-own-personal-touch">My own personal touch<a hidden class="anchor" aria-hidden="true" href="#my-own-personal-touch">#</a></h2>
+<p>Since I had already been tinkering with <a href="https://www.microchip.ua/wireless/esp01.pdf">ESP8266 modules</a> and looked into manipulating <a href="https://www.digikey.com/en/datasheets/parallaxinc/parallax-inc-28085-ws2812b-rgb-led-datasheet">WS2812B</a> based LED strips (such as the Adafruit Neopixel) and reverse engineered a bit of the Arduino library for my needs, it only made sense to integrate all into this project. There are some instructions that the creator of the original project kindly provides but I wanted a more barebones/DIY thing so instead of Arduino and HTTP requests, I am using <a href="https://docs.platformio.org/en/latest/boards/espressif8266/esp01_1m.html">PlatformIO</a> and ESP8266-nonos-sdk to implement <a href="https://mqtt.org/">MQTT</a> in plain old C. I also didn’t want Amazon Alexa integration so I replaced the <a href="https://www.weemos.cc/en/latest/d1/d1_mini.html">Weemos D1 mini</a> and the microphone the original project uses with a generic ESP-01 module and a <a href="https://www.aliexpress.com/item/32843759597.html">ESP-01 RGB board</a></p>
+<h2 id="before">Before<a hidden class="anchor" aria-hidden="true" href="#before">#</a></h2>
+<p>Before starting this project I already had some work done with my custom MQTT Dashboard project on raspberrypi 3B:</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/galleries/blog_media/Demo_compressed.gif#center" alt=""  />
+</p>
+<p>Simple solid color change on a NeoPixel ring (16 LEDs)</p>
+<h2 id="after">After<a hidden class="anchor" aria-hidden="true" href="#after">#</a></h2>
+<p>I added some more custom effects to my code and tweaked the lamp base to have access to the reset button, the array is made up of 8 strips with 9 LEDs each (72 in total), which also required a power supply instead of batteries, I went with standard 5V/3A power supply</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/_data/i/galleries/blog_media/20210617-105718-me.jpg#center" alt=""  />
+</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/_data/i/galleries/blog_media/20210621-221439-me.jpg#center" alt=""  />
+</p>
+<p>This is the final product:</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/galleries/blog_media/dashboard_demo.gif#center" alt=""  />
+</p>
+<p>In part two I’ll go into details for some (kind of crappy) low level C programming and RGB LED effects</p>
+<p>More details in my <a href="https://github.com/lopeztel/esp8266_NeoPixel">github repo</a>, also available from a mirrored repo on my self-hosted <a href="https://lopeztel.noho.st/gitea/lopeztel/esp8266_NeoPixel">gitea instance</a></p>
+<hr>
+<p>Day 12 of my 2021’s <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+<p>Join <a href="https://100daystooffload.com/">100DaysToOffload</a>!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/esp8266/">esp8266</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/rgblamp/">RGBLamp</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Infinitime 1.2-0 on PineTime, from scratch</span>
+  </a>
+  <a class="next" href="https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Making a bluetooth split keyboard (part 1)</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

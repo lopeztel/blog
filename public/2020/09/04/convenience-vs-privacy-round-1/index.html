@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Convenience vs Privacy (Round 1) | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, Privacy, Reflections, Selfhosting">
+<meta name="description" content="A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…
+A while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:
+Signal requires a phone number and depends on centralized servers.">
+<meta name="author" content="lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Convenience vs Privacy (Round 1)" />
+<meta property="og:description" content="A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…
+A while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:
+Signal requires a phone number and depends on centralized servers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-04T19:13:54&#43;00:00" />
+<meta property="article:modified_time" content="2020-09-04T19:13:54&#43;00:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Convenience vs Privacy (Round 1)"/>
+<meta name="twitter:description" content="A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…
+A while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:
+Signal requires a phone number and depends on centralized servers."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Convenience vs Privacy (Round 1)",
+      "item": "https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Convenience vs Privacy (Round 1)",
+  "name": "Convenience vs Privacy (Round 1)",
+  "description": "A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…\nA while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:\nSignal requires a phone number and depends on centralized servers.",
+  "keywords": [
+    "100DaysToOffload", "Privacy", "Reflections", "Selfhosting"
+  ],
+  "articleBody": "A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…\nA while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:\nSignal requires a phone number and depends on centralized servers. I know there are ways to have your own server but as far as I know the process can be difficult, there is no one-to-one video calls on desktop (yet) and there is no support for federation out of the box (If you, the reader, have more info on this point I’d love to know since I have only researched on the surface of the topic)\nMy current solution is a synapse installation and element client app on desktop, iOS and android device, which seems to meet all the requirements I had plus the installation process was fast and easy on my raspberrypi yunohost server\nOn the technical side of things everything is fine and works, we are able to communicate securely through a home server I own and manage but the thing is: My family only uses element to communicate with me and they keep relying on WhatsApp to communicate between them and others. It is a bit frustrating but at least our video calls are private so there is a silver lining here.\nThe arguments to use it have been many: “there are no customizable stickers”, “What do you have to hide? don’t be so paranoid”, “I don’t care if I am spied on, I’m not that interesting”, “all my friends are on WhatsApp and I like to have a single app for all my conversations”\nI have been trying to explain the risks of thinking like this and after being frustrated for a while I realized that most people concerned with privacy have an electronic or computer engineering (or similar) backgrounds, we sometimes are a bit big-headed (at least I have been at times) and forget how it is to have no understanding of how apps and communication work.\nI’d like to use this entry post to encourage people to be more understanding and patient while trying to explain privacy risks or persuading non-tech oriented people, after all, even when we’re right, no one likes an arrogant smart-ass and forcing everyone to be more privacy oriented is impossible.\nLet’s keep it up, do and take what you can.\nDay 17 of #100DaysToOffload\n",
+  "wordCount" : "427",
+  "inLanguage": "en",
+  "datePublished": "2020-09-04T19:13:54Z",
+  "dateModified": "2020-09-04T19:13:54Z",
+  "author":{
+    "@type": "Person",
+    "name": "lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Convenience vs Privacy (Round 1)
+    </h1>
+    <div class="post-meta"><span title='2020-09-04 19:13:54 +0000 +0000'>September 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;lopeztel
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to <a href="https://www.whatsapp.com/">WhatsApp</a> for communication within my family. Long story short: I lost this one…</p>
+<p>A while back I switched from WhatsApp to <a href="https://www.signal.org/#signal">Signal</a> and kind of forced my family to switch as well, however:</p>
+<p>Signal requires a phone number and depends on centralized servers. I know there are ways to have your own server but as far as I know the process can be difficult, there is no one-to-one video calls on desktop (yet) and there is no support for federation out of the box (If you, the reader, have more info on this point I’d love to know since I have only researched on the surface of the topic)</p>
+<p>My current solution is a <a href="https://matrix.org/docs/projects/server/synapse">synapse</a> installation and <a href="https://element.io/">element</a> client app on desktop, iOS and android device, which seems to meet all the requirements I had plus the installation process was fast and easy on my <a href="https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/">raspberrypi yunohost server</a></p>
+<p>On the technical side of things everything is fine and works, we are able to communicate securely through a home server I own and manage but the thing is: My family only uses element to communicate with me and they keep relying on WhatsApp to communicate between them and others. It is a bit frustrating but at least our video calls are private so there is a silver lining here.</p>
+<p>The arguments to use it have been many: “there are no customizable stickers”, “What do you have to hide? don’t be so paranoid”, “I don’t care if I am spied on, I’m not that interesting”, “all my friends are on WhatsApp and I like to have a single app for all my conversations”</p>
+<p>I have been trying to explain the risks of thinking like this and after being frustrated for a while I realized that most people concerned with privacy have an electronic or computer engineering (or similar) backgrounds, we sometimes are a bit big-headed (at least I have been at times) and forget how it is to have no understanding of how apps and communication work.</p>
+<p>I’d like to use this entry post to encourage people to be more understanding and patient while trying to explain privacy risks or persuading non-tech oriented people, after all, even when we’re right, no one likes an arrogant smart-ass and forcing everyone to be more privacy oriented is impossible.</p>
+<p>Let’s keep it up, do and take what you can.</p>
+<p>Day 17 of <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/privacy/">Privacy</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/reflections/">Reflections</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/selfhosting/">Selfhosting</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://lopeztel.xyz/blog/2020/09/15/mexican-food/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Mexican food</span>
+  </a>
+  <a class="next" href="https://lopeztel.xyz/blog/2020/08/26/foss-donations/">
+    <span class="title">Next »</span>
+    <br>
+    <span>FOSS Donations</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

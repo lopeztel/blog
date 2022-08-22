@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OpenMediaVault on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/openmediavault/</link>
+    <description>Recent content in OpenMediaVault on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jul 2020 20:12:55 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/openmediavault/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The journey to self-hosting (on a Raspberrypi 4)</title>
+      <link>https://lopeztel.xyz/blog/2020/07/07/the-journey-to-self-hosting-on-a-raspberrypi-4/</link>
+      <pubDate>Tue, 07 Jul 2020 20:12:55 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/07/07/the-journey-to-self-hosting-on-a-raspberrypi-4/</guid>
+      <description>Ever since discovering the Fediverse and reading toots from awesome people in Fosstodon, a little idea started to take shape in my head: perhaps its not that hard to self host, there are tons of tutorials and resources out there…And I need some alternative to google photos to share albums with my family back home
+Hardware After some research and settled for a RaspberryPi server/NAS, now, the purists will say that it is not the ideal platform to host but I think it is perfect to get started and learn the basics or as a hobby, then you can move on to the big boy fancy server hardware.</description>
+    </item>
+    
+  </channel>
+</rss>

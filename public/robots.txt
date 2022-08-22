@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://lopeztel.xyz/blog/sitemap.xml

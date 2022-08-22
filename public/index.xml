@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/</link>
+    <description>Recent content on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 May 2022 19:32:55 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making another split keyboard: Lily58 QMK edition</title>
+      <link>https://lopeztel.xyz/blog/2022/05/17/making-another-split-keyboard-lily58-qmk-edition/</link>
+      <pubDate>Tue, 17 May 2022 19:32:55 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2022/05/17/making-another-split-keyboard-lily58-qmk-edition/</guid>
+      <description>With the previous success (see part1, part1-a and part2) in making a bluetooth keyboard, I decided to make another keyboard with a different approach:
+My excuse for building this keyboard was that my blue switches keyboard may be too noisy for the office, and the work desktop has no bluetooth (I know, sad, right?). The plan for this one was:
+Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead.</description>
+    </item>
+    
+    <item>
+      <title>Gnome Nord theme install script</title>
+      <link>https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/</link>
+      <pubDate>Fri, 06 May 2022 20:52:46 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/</guid>
+      <description>I’ll start this post by saying that I have a thing for the Nord theme, every time I clean install a system I go through the trouble of applying the theme to everything, which got me thinking that I could automate most of it, at least for my gnome installs.
+More info on Nord theme ports here
+My script (also available here) should:
+Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github.</description>
+    </item>
+    
+    <item>
+      <title>Making a bluetooth split keyboard part 2</title>
+      <link>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</link>
+      <pubDate>Wed, 15 Sep 2021 18:45:53 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</guid>
+      <description>This is a followup on a previous entry
+It has been a while since I last wrote about this but I’ve been busy:
+Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse and bought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
+    </item>
+    
+    <item>
+      <title>Making a bluetooth split keyboard (Part 1-a)</title>
+      <link>https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/</link>
+      <pubDate>Mon, 05 Jul 2021 19:00:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/</guid>
+      <description>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
+I found some instructions in blackmagic-bluepill to follow
+I’ll try to summarize:
+wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
+    </item>
+    
+    <item>
+      <title>RGB WiFi enabled lamp (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2021/07/01/rgb-wifi-enabled-lamp-part-2/</link>
+      <pubDate>Thu, 01 Jul 2021 09:21:50 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/07/01/rgb-wifi-enabled-lamp-part-2/</guid>
+      <description>As promised in my previous entry, I’ll go into some details related to how I implemented effects on my RGB Lamp:
+All the code is available at my github repo or the mirror repo on my self-hosted gitea instance
+The idea is to have mqtt messages triggering different behavior in my code, the design consists in triggering a periodic function to change LED RGB values depending on the message topic and payload</description>
+    </item>
+    
+    <item>
+      <title>Infinitime 1.2-0 on PineTime, from scratch</title>
+      <link>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</link>
+      <pubDate>Sat, 26 Jun 2021 19:00:00 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</guid>
+      <description>It seems that it is normal for me to buy stuff/parts/devkits and let them accumulate some dust before getting back to the project pile …
+Just recently I read on the Pine64 Blog June update that Infinitime 1.2 was coming soon… Then I remembered I had ordered a PineTime devkit (part of the first batch ever actually) so I decided to find it and flash working firmware on it…
+I attempted to flash it with a STM bluepill Black Magic Probe first:</description>
+    </item>
+    
+    <item>
+      <title>RGB WiFi enabled lamp (Part 1)</title>
+      <link>https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/</link>
+      <pubDate>Thu, 24 Jun 2021 18:47:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/24/rgb-wifi-enabled-lamp-part-1/</guid>
+      <description>Following up on hobby projects, this past few weeks I’ve been working a lot on my abandoned WiFi enabled RGB lamp
+The inspiration On one of those days you end up searching for random stuff across the internet I came across a project called Twisted WiFi-controlled Desk Lamp on Thingiverse (awesome site, check it out), this was back when a friend offered to print stuff for me so I jumped at the opportunity and had him 3D print the parts</description>
+    </item>
+    
+    <item>
+      <title>Making a bluetooth split keyboard (part 1)</title>
+      <link>https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/</link>
+      <pubDate>Wed, 02 Jun 2021 19:04:16 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/</guid>
+      <description>It’s been a while since I last posted something remotely technical so I thought this would do this entry
+All the work is based on the Lily58 split keyboard, we will be using the nRFmicro board, which in turn will be the brain of each keyboard half
+The first step was to make the nRFmicro board using the soldering guide in the repo, needless to say the process was complicated but a very good excuse to use my new Pinecil</description>
+    </item>
+    
+    <item>
+      <title>Mexican Food (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2021/05/10/mexican-food-part-2/</link>
+      <pubDate>Mon, 10 May 2021 19:26:16 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/05/10/mexican-food-part-2/</guid>
+      <description>This is a bit of a follow-up on my previous rant on Mexican food and its representation abroad, see the previous entry, since last time I’ve tried to show “the way” to my Norwegian friends and I thought it would be nice to document the process.
+I’ve also written about food during some holidays, see:
+Day of the Dead away from Mexico Day of the Epiphany away from Mexico The first time I cooked something remotely close to real Mexican food had to wait until I got a care package, after Christmas-New Year’s, it contained some traditional sweets (long gone by the time of writing of this entry), some Mezcal (I like to describe the flavor as “smoked” Tequila) and some flasks of Mole and an assortment of dry peppers</description>
+    </item>
+    
+    <item>
+      <title>Fooling around with bash scripts 2</title>
+      <link>https://lopeztel.xyz/blog/2021/02/28/fooling-around-with-bash-scripts-2/</link>
+      <pubDate>Sun, 28 Feb 2021 13:20:27 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/28/fooling-around-with-bash-scripts-2/</guid>
+      <description>This is a follow-up to my previous entries: Fooling around with bash scripts, which I used as a base for Migration from Google Photos to Nextcloud and Piwigo
+Since some of my old picture albums have old .mov, .mpg and .avi videos in them I decided to also convert them to .mp4 (piwigo can show them in the albums), so once again I tried came up with something to automate the task</description>
+    </item>
+    
+    <item>
+      <title>My (Neo)Vim Cheatsheet</title>
+      <link>https://lopeztel.xyz/blog/2021/02/21/my-neovim-cheatsheet/</link>
+      <pubDate>Sun, 21 Feb 2021 16:32:14 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/21/my-neovim-cheatsheet/</guid>
+      <description>I’ve been learning to use neovim for almost 3 weeks now and it has been fun, coming from VSCode I guess I was spoiled by the feature rich IDE/text editor, however there is beauty in the simplicity keyboard oriented (Neo)vim text editor
+I’ve been trying to get all the useful keyboard shortcuts and commands I’ve found in a single place and I though this could be helpful for other noobs like me, fosstodon community was helpful and shared their Tips n’ Tricks as well.</description>
+    </item>
+    
+    <item>
+      <title>Migration from Google Photos to Nextcloud and Piwigo</title>
+      <link>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</link>
+      <pubDate>Sat, 13 Feb 2021 18:59:15 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/13/migration-from-google-photos-to-nextcloud-and-piwigo/</guid>
+      <description>Getting the pictures First step was downloading all my pictures from Google Photos, so I went to Google Takeout which is the way to download all the data the big G has on you. For now I selected only the data in Google Photos but if I had wanted to I could’ve downloaded potentially everything.
+Just for context I didn’t have that much in Google Photos, around 45 GB total, not bad</description>
+    </item>
+    
+    <item>
+      <title>Upgrading my rig</title>
+      <link>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</link>
+      <pubDate>Fri, 05 Feb 2021 20:26:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</guid>
+      <description>I finally got to make some upgrades to my desktop computer!
+Before Just for context, my desktop computer was a hand-me-down that a friend just gave me because he had gotten a much better one. I took it and played around with it. After all these years this was the first time I owned a computer with a dedicated GPU (I know, sad but true)
+These were the specs:
+Motherboard CPU GPU GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
+    </item>
+    
+    <item>
+      <title>Fooling around with bash scripts</title>
+      <link>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</link>
+      <pubDate>Tue, 02 Feb 2021 19:13:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/02/02/fooling-around-with-bash-scripts/</guid>
+      <description>I thought I would share 2 shell scripts that I’ve found useful, the first one allows me to to use my DSLR camera as a webcam and the second one allows me to batch resize and optimize images
+Using DSLR as webcam This is probably most useful in COVID-19 times, found it a while back on YouTube (not a fan of the big G? Invidious or FreeTube are your friends), also here’s a blog post for more details.</description>
+    </item>
+    
+    <item>
+      <title>My transition from VSCode to Neovim</title>
+      <link>https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/</link>
+      <pubDate>Thu, 28 Jan 2021 19:32:15 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/01/28/my-transition-from-vscode-to-neovim/</guid>
+      <description>I’ve always liked the idea of using a tiling window manager and customizing the hell out of it, you know, the kind of stuff you see by searching for the linuxPorn hashtag… My main problem with them is that I am very very used to GUIs, while I am fairly competent on a terminal, I have never learned to use emacs or vim. I am in the middle of transitioning to CLI based programs, on a previous post I described ncspot and mpsyt, I’ve also been looking at gomuks and ranger</description>
+    </item>
+    
+    <item>
+      <title>My blogging journey so far</title>
+      <link>https://lopeztel.xyz/blog/2021/01/21/my-blogging-journey-so-far/</link>
+      <pubDate>Thu, 21 Jan 2021 20:29:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/01/21/my-blogging-journey-so-far/</guid>
+      <description>I remember I started a blog in March last year (2019), it was a simple Writefreely blog,it looked like this:
+It was simple, easy to use and you could follow it via mastodon, I wanted to engage a bit more with my fellow fedizens so I started looking into Wordpress around the same time I built my Raspberrypi 4 server and I found out that Wordpress was an app Yunohost had listed (it&amp;rsquo;s basically a one-click install but you require a dedicated domain) so I migrated, at the time that was easy, just downloaded all my previous posts in markdown and added them one by one (there weren&amp;rsquo;t that many).</description>
+    </item>
+    
+    <item>
+      <title>Day of the Epiphany (Three Kings’ Day?) away from Mexico</title>
+      <link>https://lopeztel.xyz/blog/2021/01/09/day-of-the-epiphany-three-kings-day-away-from-mexico/</link>
+      <pubDate>Sat, 09 Jan 2021 09:08:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2021/01/09/day-of-the-epiphany-three-kings-day-away-from-mexico/</guid>
+      <description>Following up on my series “Celebrating holidays away from Mexico”, after entries such as: a rant about Mexican food on independence day and day of the dead
+January 6th is Día de Reyes, the last date of what we Mexicans know as the Guadalupe – Reyes marathon (which is, in short, an extended holiday period for eating and drinking that starts on December 12th)
+Being away from home and still a bit bitter about not being able to go back home for the holidays because of COVID-19, I contacted my baker friend and ordered Rosca de Reyes (roughly translates to King’s baguel I guess).</description>
+    </item>
+    
+    <item>
+      <title>Christmas 2020</title>
+      <link>https://lopeztel.xyz/blog/2020/12/29/christmas-2020/</link>
+      <pubDate>Tue, 29 Dec 2020 19:11:18 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/29/christmas-2020/</guid>
+      <description>This is meant to be a reflection on spending Christmas alone in one of the worst years for the planet in general.
+I think it’s basically beating on a dead horse to say that 2020 has been horrible in general due to COVID-19, everyone has had it tough for a lot of reasons, from the worst (having lost a loved one or health issues) to the minor annoyances (like working from home).</description>
+    </item>
+    
+    <item>
+      <title>Some CLI awesomeness</title>
+      <link>https://lopeztel.xyz/blog/2020/12/17/some-cli-awesomeness/</link>
+      <pubDate>Thu, 17 Dec 2020 20:30:53 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/17/some-cli-awesomeness/</guid>
+      <description>I’ll have to confess I wasn’t always a fan of CLI applications, I come from a world were all I knew was GUI. I even thought that the heavy use of terminal emulators and CLI apps was snobbish, you know, the feeling was kind of like when (some) people say “BTW, I use Arch” I used to roll my eyes internally.
+Yet, here I am writing about CLI apps and how awesome they are…</description>
+    </item>
+    
+    <item>
+      <title>A little more than a year living in Norway</title>
+      <link>https://lopeztel.xyz/blog/2020/12/15/a-little-more-than-a-year-living-in-norway/</link>
+      <pubDate>Tue, 15 Dec 2020 20:10:54 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/15/a-little-more-than-a-year-living-in-norway/</guid>
+      <description>As the title suggests, it’s been a little over a year since I moved to Norway for work… It’s been a challenging year to say the least, and not only because of COVID-19.
+For starters, it’s been hard to get used to this weird country’s ways (and I mean this in the most endearing way), from personal space, weather and language to food (I am Mexican and I cannot stress the importance of food enough, see my previous entry for reference).</description>
+    </item>
+    
+    <item>
+      <title>Thank you Yunohost (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/12/12/thank-you-yunohost-part-2/</link>
+      <pubDate>Sat, 12 Dec 2020 09:52:12 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/12/thank-you-yunohost-part-2/</guid>
+      <description>This is a bit of a continuation on my previous thank you post, since I received a lot of help and it deserves proper credit, this post is to be taken as part thank you note and part summary of the whole SSL certificate issue ordeal:
+First things first, in short Yunohost is an easy solution to get started with self hosting without dealing with the more technical side of things, it’s easy to install apps and I’ve been running a yunohost server on my raspberry pi 4 for months now.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 4)</title>
+      <link>https://lopeztel.xyz/blog/2020/12/06/thoughts-on-the-pinebookpro-part-4/</link>
+      <pubDate>Sun, 06 Dec 2020 13:52:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/12/06/thoughts-on-the-pinebookpro-part-4/</guid>
+      <description>This is a follow-up on a previous entry
+Dealing with an external display A while back I ordered a USB-C dongle that I thought wasn’t working so I checked a list of USB Combination Devices that are compatible in the wiki, more specifically I had to wait for this USB-C dongle from aliexpress to get here.
+Turns out the new dongle didn’t work either, weird flicker when trying to switch to external display:</description>
+    </item>
+    
+    <item>
+      <title>Fishing as a new hobby</title>
+      <link>https://lopeztel.xyz/blog/2020/11/28/fishing-as-a-new-hobby/</link>
+      <pubDate>Sat, 28 Nov 2020 19:04:35 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/28/fishing-as-a-new-hobby/</guid>
+      <description>For some time now, starting from spring last year, I’ve been going out to fish (from the fjord’s shore) with 2 of my friends here.
+Let’s just say that we’re not very good at this, a lot of our lures/hooks have been lost to seaweed and even bad knots that came loose while throwing (that one was me by the way 😛 )
+Only one I managed to catch something, gutting, bleeding and cutting the fish was an experience and it makes you appreciate the convenience of supermarkets.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Resources and ongoing translation efforts</title>
+      <link>https://lopeztel.xyz/blog/2020/11/23/privacy-resources-and-ongoing-translation-efforts/</link>
+      <pubDate>Mon, 23 Nov 2020 16:53:14 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/23/privacy-resources-and-ongoing-translation-efforts/</guid>
+      <description>Humanetech Translation Project Otherwise known as HTP (I personally prefer HTTP 😛 ), is a little project that started on the Humane Tech Community forum after my little comment about privacy related content available mostly in English, see this entry for context.
+The project has officially started and is looking for translators, so if anyone is interested please head here, apparently we’ve gathered quite a few translators already but it’s always nice to have more!</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 3)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</link>
+      <pubDate>Tue, 17 Nov 2020 18:24:11 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/17/thoughts-on-the-pinebookpro-part-3/</guid>
+      <description>This is a follow-up on a previous entry
+One step closer to daily driver!!
+Working from home is possible with the pinebookpro I managed to connect to my workplace’s VPN, however it took some digging around: first of all, we have a Linux VPN package, so that’s already something, (kudos for showing Linux some love); you can choose to either install a .deb package, a .rpm package or build from source for either x86_64 or armhf architectures (basically just copies over some pre-compiled binaries), so far so good, everything great.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebookpro (Part 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</link>
+      <pubDate>Sat, 14 Nov 2020 14:14:20 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/14/thoughts-on-the-pinebookpro-part-2/</guid>
+      <description>This is a follow-up to this entry.
+This time I’ll try to describe more day to day use (at least mine):
+Generic tasks The most simple task I use a computer for is writing entries for my blog, as I mentioned before I love the Markdown format… I’ve found a perfectly good FOSS replacement for Typora, which is also available for aarch64, so I am now using Ghostwriter.
+Speaking of typing, I’ve been using the keyboard on the pinebookpro for a while now and it is quite good for the price, no premium feeling to it but it feels sturdy and the keys have decent travel, so that’s ok.</description>
+    </item>
+    
+    <item>
+      <title>Day of the dead away from Mexico</title>
+      <link>https://lopeztel.xyz/blog/2020/11/02/day-of-the-dead-away-from-mexico/</link>
+      <pubDate>Mon, 02 Nov 2020 18:36:19 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/11/02/day-of-the-dead-away-from-mexico/</guid>
+      <description>I usually like to hate on Facebook but I’ve got to admit it is useful if used responsibly, this time thanks to it, I found out that a mexican baker had moved to town and I managed to get “Pan de Muerto” (Dead bread?).
+I feel like I have to describe it for non-mexicans: for starters, it’s not made of dead people 😛
+It’s like a not so dense bun (with a twist of orange) and covered in sugar.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on the pinebook pro</title>
+      <link>https://lopeztel.xyz/blog/2020/10/23/thoughts-on-the-pinebook-pro/</link>
+      <pubDate>Fri, 23 Oct 2020 18:32:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/23/thoughts-on-the-pinebook-pro/</guid>
+      <description>Back in September I pulled the trigger and ordered a pinebook pro.
+Long story short: I declare myself a fanboy, the pinebook pro from pine64 is a very capable little machine.
+There are a lot of better written and more detailed blog posts/reviews of the pinebook pro out there already but just in case:
+For the uninitiated the pinebook pro is an ARM powered laptop (yes, pine64 did it before it was cool) based on the ROCKPro64 single board computer –Think Raspberrypi on steroids– here are the specs:</description>
+    </item>
+    
+    <item>
+      <title>Some thoughts on the weekend hike</title>
+      <link>https://lopeztel.xyz/blog/2020/10/20/some-thoughts-on-the-weekend-hike/</link>
+      <pubDate>Tue, 20 Oct 2020 19:51:39 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/20/some-thoughts-on-the-weekend-hike/</guid>
+      <description>This weekend was fun, on Sunday some friends invited me to tag along on their weekend hike. All this happened because the company I work for decided to donate money to a charitable cause, the money amount was proportional to the distance logged by all its employees so that was motivation for us to run, walk or hike during the weekend.
+The hike was long (11+ Km), it took us around 1.</description>
+    </item>
+    
+    <item>
+      <title>Weird things happen when you selfhost your blog (edit)</title>
+      <link>https://lopeztel.xyz/blog/2020/10/16/weird-things-happen-when-you-selfhost-your-blog-edit/</link>
+      <pubDate>Fri, 16 Oct 2020 18:02:23 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/16/weird-things-happen-when-you-selfhost-your-blog-edit/</guid>
+      <description>Interesting, I managed to screw up my blog. Logging in is impossible through a web browser, I get the message:
+502 Bad Gateway
+&amp;ndash; nginx
+This happened after messing around with the WP Reset plugin, apparently I deleted some custom table I shouldn’t have… Funnily enough I am still able to use the android app to create posts so not all hope is gone.
+Weird things happen….
+Edit: Turns out I couldn’t access the login screen for my site but could access the comments section (you know the one where you can approve new comments, then from there Dashboard was broken but I could access the menu Tools -&amp;gt; WP Reset).</description>
+    </item>
+    
+    <item>
+      <title>Saving my /home partition with fsck</title>
+      <link>https://lopeztel.xyz/blog/2020/10/12/saving-my-home-partition-with-fsck/</link>
+      <pubDate>Mon, 12 Oct 2020 18:17:14 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/10/12/saving-my-home-partition-with-fsck/</guid>
+      <description>Let’s face it, part of the joy of Linux is solving unexpected problems you wouldn’t have with proprietary Operating Systems like Windows and MacOS. That being said this is my latest adventure:
+I turned on m computer and after the grub screen came up and I chose to boot into Manjaro (yes, the horror, I know dual booting Windows is not ideal but a necessary evil in my case). Something like this came up instead of the usual GUI login prompt:</description>
+    </item>
+    
+    <item>
+      <title>Convenience vs Privacy (Round 2)</title>
+      <link>https://lopeztel.xyz/blog/2020/09/30/convenience-vs-privacy-round-2/</link>
+      <pubDate>Wed, 30 Sep 2020 17:55:12 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/09/30/convenience-vs-privacy-round-2/</guid>
+      <description>Context For a while now I’ve been trying to find ways to convey the risks of social media and the importance of privacy to my non-tech savvy family members, in a previous entry I went over getting away from WhatsApp (Facebook really) and using element connected to my own self hosted synapse server.
+The Social Dilemma Two weeks ago I watched The Social Dilemma on Netflix, which I really enjoyed. To elaborate further these are my main take aways:</description>
+    </item>
+    
+    <item>
+      <title>Mexican food</title>
+      <link>https://lopeztel.xyz/blog/2020/09/15/mexican-food/</link>
+      <pubDate>Tue, 15 Sep 2020 16:55:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/09/15/mexican-food/</guid>
+      <description>Context I am writing this entry because today is September 15th, almost Mexican Independence day. Fun fact: The whole thing really started on September 16th, 210 years ago but to this day is celebrated on the night of the 15th because one of our presidents wanted to celebrate his birthday at the same time. See Porfirio Diaz for more details.
+This entry is a bit of a rant about living abroad and what everyone calls “Mexican food”</description>
+    </item>
+    
+    <item>
+      <title>Convenience vs Privacy (Round 1)</title>
+      <link>https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/</link>
+      <pubDate>Fri, 04 Sep 2020 19:13:54 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/09/04/convenience-vs-privacy-round-1/</guid>
+      <description>A brief summary: I’ve been looking into privacy friendly alternatives to software most of us use or used in our everyday lives. To be more precise, an alternative to WhatsApp for communication within my family. Long story short: I lost this one…
+A while back I switched from WhatsApp to Signal and kind of forced my family to switch as well, however:
+Signal requires a phone number and depends on centralized servers.</description>
+    </item>
+    
+    <item>
+      <title>FOSS Donations</title>
+      <link>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</link>
+      <pubDate>Wed, 26 Aug 2020 16:58:45 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/26/foss-donations/</guid>
+      <description>Let me start by saying that the purpose of this entry is not to say “Look at how selfless I am for donating money to FOSS organizations or projects” so, with that in mind, I will not list any specific quantities because that is not the point I am trying to make. Having written the proper disclaimer, let’s get to it:
+My preferences In the past month I have written about my projects and experiences with FOSS, self hosting and even digital art.</description>
+    </item>
+    
+    <item>
+      <title>Optimizing my yunohost wordpress blog</title>
+      <link>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</link>
+      <pubDate>Sat, 22 Aug 2020 10:07:13 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/22/optimizing-my-yunohost-wordpress-blog/</guid>
+      <description>After my last update about my blog migration, basically all I did was install LiteSpeed Cache plugin and mess around with it.
+For reference, lots of documentation goodness here
+The most important part to note is that I kept getting bugged by both Google’s PageSpeed Insights and GTmetrix to enable text compression.
+After some time reading about compression and Marco Saric’s blogpost, I tried to enable compression by adding some lines of code at the bottom of the .</description>
+    </item>
+    
+    <item>
+      <title>Terminal bling</title>
+      <link>https://lopeztel.xyz/blog/2020/08/21/terminal-bling/</link>
+      <pubDate>Fri, 21 Aug 2020 18:15:46 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/21/terminal-bling/</guid>
+      <description>Followup on my previous entry related to my wallpaper. I just wanted my terminal to look nice since I spend quite some time on it. I use zsh by the way, but there are similar instructions for bash as well.
+I’ll just document the steps I followed (2 alternatives)
+powerline-shell Install powerline-shell (more configuration options in the Github repo):
+sudo pip install powerline-shell
+Add these lines to .zshrc:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&amp;#34;$(powerline-shell --shell zsh $?</description>
+    </item>
+    
+    <item>
+      <title>My nerdy wallpaper</title>
+      <link>https://lopeztel.xyz/blog/2020/08/17/my-nerdy-wallpaper/</link>
+      <pubDate>Mon, 17 Aug 2020 06:00:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/17/my-nerdy-wallpaper/</guid>
+      <description>Just recently I found an interesting package in AUR, it’s called pacwall. Since I use Manjaro the installation quite simple through pacman or pamac.
+The goal is simple, to have a visual representation of your installed packages and their dependencies. for more information and how to use it consult the repo
+I just typed:
+pacwall -D -S 1920x1080
+in my terminal to automatically set my desktop wall paper with the corresponding resolution and generate a corresponding .</description>
+    </item>
+    
+    <item>
+      <title>Migration to WordPress</title>
+      <link>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</link>
+      <pubDate>Sun, 16 Aug 2020 11:15:25 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/16/migration-to-wordpress/</guid>
+      <description>In recent days I’ve been busy trying to get my blog up and running on my cheapo Raspberry Pi + Yunohost server setup. The process was fun, so here’s a blog entry about migrating my blog (blogception?) from a writefreely instance to my self hosted wordpress instance.
+Why though? To put it simply: because I can.
+On a more serious note, my previous blog was hosted at qua.name and there was nothing wrong with it, but I really wanted to be able to have a bit more interaction, easy theming, and an overall a plug and play solution with a GUI.</description>
+    </item>
+    
+    <item>
+      <title>Progress report on a more FOSS/FLOSS, decentralized digital life</title>
+      <link>https://lopeztel.xyz/blog/2020/08/09/progress-report-on-a-more-foss-floss-decentralized-digital-life/</link>
+      <pubDate>Sun, 09 Aug 2020 06:00:57 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/09/progress-report-on-a-more-foss-floss-decentralized-digital-life/</guid>
+      <description>For context, let me refer to my very first entry, the idea was basically looking for alternatives, so here’s the long awaited progress report:
+Changes already in place Using Mastodon instead of Twitter Using Pixelfed instead of Instagram (On Android) Using NewPipe instead of YouTube, this one is quite cool, it has all the features you’d want: Download, Picture in Picture mode, Background Music reproduction… Using Writefreely and/or WordPress (Still haven’t decided) instead of other blogging platforms (On Android) Using Signal instead of WhatsApp, although that may change in the near future Using Jitsi Meet instead of Skype, Zoom, Google Hangouts Using Protonmail instead of Gmail (although not sure if FOSS/FLOSS, they maintain an OpenPGP library) (On Android) Using Simple Mobile Tools SMS Messenger instead of Google Messages Using Simple Mobile Tools Gallery instead of Google Photos Using Bitwarden instead of LastPass (On Android) Using andOTP (at least for personal stuff) Using F-Droid instead of the Google Play Store whenever possible Changes in transition period Self-hosted Nextcloud instead of Dropbox, Google Drive, One Drive… Self-hosted Gitea instead of Github (currently only mirroring) Self-hosted Piwigo gallery instead of Google Photos (more info on my setup here) Self-hosted email (problems with outgoing port 25) Self-hosted Synapse (Matrix server) in testing phase, could replace Signal by Element if tests show promising results Calendar synchronization using Nextcloud instead of Google Calendar (Android apps: Simple Mobile Tools Calendar, DAVX5 and OpenTasks) (On Android) Trying to use OsmAnd instead of Google Maps (This is by far the hardest change to be made) Compromises Facebook is still the platform where everyone plans events so I need that just to follow-up on them (not actively in use) Whatsapp and Facebook messenger as backup messaging (Trying to move friends and family over to Signal or Element) Can’t seem to get away from Microsoft: Teams, Outlook and Microsoft Authenticator are used for work Day 11 of #100DaysToOffload</description>
+    </item>
+    
+    <item>
+      <title>My Raspberry Pi server with yunohost</title>
+      <link>https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/</link>
+      <pubDate>Sat, 08 Aug 2020 20:37:35 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/08/my-raspberry-pi-server-with-yunohost/</guid>
+      <description>I will try to make this entry resemble a tutorial, hopefully this ends up being useful to someone.
+Why start over? I had been playing around with Open Media Vault before (see this entry for details), but it was mainly based on docker images and I could never get Nextcloud up and running (the closest I came was installing nextcloudpi, but I could never get the docker image to run using external storage).</description>
+    </item>
+    
+    <item>
+      <title>Thank you yunohost</title>
+      <link>https://lopeztel.xyz/blog/2020/08/06/thank-you-yunohost/</link>
+      <pubDate>Thu, 06 Aug 2020 06:00:03 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/06/thank-you-yunohost/</guid>
+      <description>Ever since I started looking into the Fediverse, FOSS/FLOSS, privacy and self-hosting I was pleasantly surprised by how engaging and helpful the community can be.
+As an example: in Fosstodon all my interactions have been very nice, from sharing random unrelated stuff to asking for advice on more technical matters everyone has always been helpful and willing to give advice.
+Another great experience I had recently was related with the yunohost project (long story short, my Open Media Vault setup went down in flames, tutorial coming shortly), being kind of a big project one would think that as an individual, communication would be slow or hard, kind of like with companies as a consumer.</description>
+    </item>
+    
+    <item>
+      <title>Some thoughts on consumerism</title>
+      <link>https://lopeztel.xyz/blog/2020/08/05/some-thoughts-on-consumerism/</link>
+      <pubDate>Wed, 05 Aug 2020 06:00:57 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/08/05/some-thoughts-on-consumerism/</guid>
+      <description>I like to keep up to date with the latest news on the consumer electronics market (newest phones, laptops and processors) and lately I’ve found myself thinking: “That looks like a great phone/laptop, I should get it”.
+Then the thought that usually follows is “Maybe I don’t really need it”
+That’s the thing, media constantly bombards us with ads to get new things/gadgets when we already own perfectly working devices…</description>
+    </item>
+    
+    <item>
+      <title>Mexico – Quality of life and different perspectives</title>
+      <link>https://lopeztel.xyz/blog/2020/07/30/mexico-quality-of-life-and-different-perspectives/</link>
+      <pubDate>Thu, 30 Jul 2020 20:18:21 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/07/30/mexico-quality-of-life-and-different-perspectives/</guid>
+      <description>OK, I am guilty of scrolling through Facebook even though I am on the Fediverse… I simply keep it because everyone else I care about does, anyway, on to the important stuff:
+Every once in a while I see something worthwhile there, this time I saw two very interesting posts close to each other (in my timeline at least), these were shared by two different people, both Mexican like me.</description>
+    </item>
+    
+    <item>
+      <title>Some thoughts on being productive</title>
+      <link>https://lopeztel.xyz/blog/2020/07/28/some-thoughts-on-being-productive/</link>
+      <pubDate>Tue, 28 Jul 2020 20:16:27 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/07/28/some-thoughts-on-being-productive/</guid>
+      <description>This entry is going to be a bit more personal, I usually avoid all the touchy – feely subjects but there is something to be said about how we go about balancing our professional careers and private life.
+Long story short, I think I work with brilliant people and lately I’ve been anxious about catching up and feeling a bit guilty whenever I catch myself at home being a couch potato.</description>
+    </item>
+    
+    <item>
+      <title>The journey to self-hosting (on a Raspberrypi 4)</title>
+      <link>https://lopeztel.xyz/blog/2020/07/07/the-journey-to-self-hosting-on-a-raspberrypi-4/</link>
+      <pubDate>Tue, 07 Jul 2020 20:12:55 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/07/07/the-journey-to-self-hosting-on-a-raspberrypi-4/</guid>
+      <description>Ever since discovering the Fediverse and reading toots from awesome people in Fosstodon, a little idea started to take shape in my head: perhaps its not that hard to self host, there are tons of tutorials and resources out there…And I need some alternative to google photos to share albums with my family back home
+Hardware After some research and settled for a RaspberryPi server/NAS, now, the purists will say that it is not the ideal platform to host but I think it is perfect to get started and learn the basics or as a hobby, then you can move on to the big boy fancy server hardware.</description>
+    </item>
+    
+    <item>
+      <title>My not so new job</title>
+      <link>https://lopeztel.xyz/blog/2020/07/02/my-not-so-new-job/</link>
+      <pubDate>Thu, 02 Jul 2020 20:07:02 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/07/02/my-not-so-new-job/</guid>
+      <description>As mentioned in a previous entry, I started a new job in Norway last year, here are my thoughts so far:
+First of all, a couple of interviews related to my position took place 3 weeks before my Master’s thesis was due, all that can be said about that is: lots of excitement, I remember getting results and figures the weekend before the final interview took place.
+After a well deserved month of relaxation back home (Mexico), my first day on my new job was a week before the company’s Christmas party and it wasn’t long after that everything was slowing down and everyone was away from the office so not much time to get used to a new country and learn the ropes at the new workplace.</description>
+    </item>
+    
+    <item>
+      <title>Nice gestures</title>
+      <link>https://lopeztel.xyz/blog/2020/06/26/nice-gestures/</link>
+      <pubDate>Fri, 26 Jun 2020 20:03:22 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/06/26/nice-gestures/</guid>
+      <description>Having being abroad and back home 2 times in the last 3 years have taught me that living in Mexico makes you take some things for granted:
+Family Excellent food Friends Let’s just say that personal interactions have been… different, but not in a bad way.
+I was always a bit of an oddball, antisocial even (for Mexican standards), but after accepting a job offer in November that led to moving to Norway, knowing just a handful of people in the city (from my Masters program), living alone and COVID-19 lock down, even I started to feel anxious and a bit depressed.</description>
+    </item>
+    
+    <item>
+      <title>Linux and Art mix</title>
+      <link>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</link>
+      <pubDate>Thu, 25 Jun 2020 20:00:09 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/06/25/linux-and-art-mix/</guid>
+      <description>I just felt the need to document my latest Linux issues:
+First, some context, I like painting with watercolor and have been doing it for quite a while now but in the last couple of years material such as paper (I used Arches 300g) has become quite expensive, which made me think that perhaps it was about time to go digital.
+After buying a cheapo digitizer tablet (a tiny one by the chinese brand Huion) I came across my first issue: doesn’t work “out of the box” on linux (specifically Manjaro); long story short and after some research my eyes came across the DIGImend project, turns out that these guys have been creating drivers for all sorts of digitizer tablets out there and mine was on the list, but it gets better, it is in the AUR!</description>
+    </item>
+    
+    <item>
+      <title>Some thoughts about convenience and COVID-19</title>
+      <link>https://lopeztel.xyz/blog/2020/04/18/some-thoughts-about-convenience-and-covid-19/</link>
+      <pubDate>Sat, 18 Apr 2020 19:55:57 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/04/18/some-thoughts-about-convenience-and-covid-19/</guid>
+      <description>I was just recently thinking given the recent COVID-19 situation, the world is not ready to prioritize what is really important.
+It feels like no one really notices importance of services like running water, electricity and above all medical care. What I see on the news nowadays leads me to believe that no one really cares about anything as long as we’re not affected.
+No one cared about COVID-19 until we couldn’t go out, until our Amazon or Aliexpress and overall cheap stuff from China couldn’t reach us in time.</description>
+    </item>
+    
+    <item>
+      <title>Skiing and COVID-19</title>
+      <link>https://lopeztel.xyz/blog/2020/03/13/skiing-and-covid-19/</link>
+      <pubDate>Fri, 13 Mar 2020 19:52:08 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/03/13/skiing-and-covid-19/</guid>
+      <description>Some random thoughts on a recent failed ski trip and the global pandemic
+Skiing First things first, I have absolutely no clue on how to ski, zero experience whatsoever, so naturally I had to sign up for my company’s Ski trip. In total there were 37 people in the group.
+We got to a cabin close to a ski resort after a four and a half hour drive on Wednesday, all went well except for some icy paths on the way but that is another story (just don’t do summer tires and front 2 wheel drive on them, you’ll suffer a lot)</description>
+    </item>
+    
+    <item>
+      <title>Into the Fediverse</title>
+      <link>https://lopeztel.xyz/blog/2020/03/02/into-the-fediverse/</link>
+      <pubDate>Mon, 02 Mar 2020 19:39:57 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/03/02/into-the-fediverse/</guid>
+      <description>Privacy and social networks Welcome stranger, let me start by saying this blog is just meant to be a space to share my thoughts and because I find it therapeutic, don’t expect the next best novel 🙂
+Now, let’s get right to it: I had always known that big tech companies such as Facebook or Google don’t let you have free accounts out of the goodness of their CEO’s hearts, I also knew that their revenue comes mostly from ads, targeted ads.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://lopeztel.xyz/blog/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/about/</guid>
+      <description>About me</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rant on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/rant/</link>
+    <description>Recent content in Rant on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Sep 2020 16:55:59 +0000</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/rant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mexican food</title>
+      <link>https://lopeztel.xyz/blog/2020/09/15/mexican-food/</link>
+      <pubDate>Tue, 15 Sep 2020 16:55:59 +0000</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2020/09/15/mexican-food/</guid>
+      <description>Context I am writing this entry because today is September 15th, almost Mexican Independence day. Fun fact: The whole thing really started on September 16th, 210 years ago but to this day is celebrated on the night of the 15th because one of our presidents wanted to celebrate his birthday at the same time. See Porfirio Diaz for more details.
+This entry is a bit of a rant about living abroad and what everyone calls “Mexican food”</description>
+    </item>
+    
+  </channel>
+</rss>
