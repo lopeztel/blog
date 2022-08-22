@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Lopeztel&#39;s Blog">
 <meta name="author" content="Lopeztel">
 <link rel="canonical" href="https://lopeztel.xyz/blog/posts/">
-<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.d6e3b908b0057e207d7a03f785a6dc7aabf91f7483df0b5b295729600dfb6b93.css" integrity="sha256-1uO5CLAFfiB9egP3habceqv5H3SD3wtbKVcpYA37a5M=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.b183800e2cfbb62c3bce2b2ba56cdb2dd33af76c75cf4550173d5dfebd7c68a6.css" integrity="sha256-sYOADiz7tiw7zisrpWzbLdM692x1z0VQFz1d/r18aKY=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
@@ -99,14 +99,14 @@
     <nav class="nav">
         <div class="logo">
             <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -120,7 +120,7 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
@@ -160,6 +160,20 @@
     </a>
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Migrating from WordPress to Hugo
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I’ve been toying with the idea for a while, and now I finally found time to get to it (more like I used the project as an excuse to not go out and exercise :P)
+The whole thing started with finding this blog post and realizing I could just host my own static website from my yunohost raspberrypi setup, so the journey began
+I was gladly surprised by the fact that Hugo is easy to install in Arch or Arch based Linux distros (such as my main desktop’s Manjaro install):...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-08-22 19:37:10 +0200 CEST'>August 22, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to Migrating from WordPress to Hugo" href="https://lopeztel.xyz/blog/2022/08/22/from-wordpress-to-hugo/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -218,23 +232,10 @@ wiring is important! Since the whole point of making the BMP flasher/debugger wa
   <footer class="entry-footer"><span title='2021-07-05 19:00:20 +0000 +0000'>July 5, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
   <a class="entry-link" aria-label="post link to Making a bluetooth split keyboard (Part 1-a)" href="https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>RGB WiFi enabled lamp (Part 2)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>As promised in my previous entry, I’ll go into some details related to how I implemented effects on my RGB Lamp:
-All the code is available at my github repo or the mirror repo on my self-hosted gitea instance
-The idea is to have mqtt messages triggering different behavior in my code, the design consists in triggering a periodic function to change LED RGB values depending on the message topic and payload...</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-07-01 09:21:50 +0000 +0000'>July 1, 2021</span>&nbsp;·&nbsp;10 min&nbsp;·&nbsp;lopeztel</footer>
-  <a class="entry-link" aria-label="post link to RGB WiFi enabled lamp (Part 2)" href="https://lopeztel.xyz/blog/2021/07/01/rgb-wifi-enabled-lamp-part-2/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="next" href="https://lopeztel.xyz/blog/posts/page/2/">Next »</a>
+    <a class="next" href="https://lopeztel.xyz/blog/posts/page/2/">Next&nbsp;&nbsp;»
+    </a>
   </nav>
 </footer>
     </main>
@@ -244,7 +245,7 @@ The idea is to have mqtt messages triggering different behavior in my code, the 
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
