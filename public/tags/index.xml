@@ -6,13 +6,40 @@
     <description>Recent content in Tags on Lopeztel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Aug 2022 19:37:10 +0200</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Aug 2022 19:17:53 +0200</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>100DaysToOffload</title>
       <link>https://lopeztel.xyz/blog/tags/100daystooffload/</link>
-      <pubDate>Mon, 22 Aug 2022 19:37:10 +0200</pubDate>
+      <pubDate>Sun, 28 Aug 2022 19:17:53 +0200</pubDate>
       
       <guid>https://lopeztel.xyz/blog/tags/100daystooffload/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microbit</title>
+      <link>https://lopeztel.xyz/blog/tags/microbit/</link>
+      <pubDate>Sun, 28 Aug 2022 19:17:53 +0200</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/tags/microbit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nRF52833</title>
+      <link>https://lopeztel.xyz/blog/tags/nrf52833/</link>
+      <pubDate>Sun, 28 Aug 2022 19:17:53 +0200</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/tags/nrf52833/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://lopeztel.xyz/blog/tags/rust/</link>
+      <pubDate>Sun, 28 Aug 2022 19:17:53 +0200</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/tags/rust/</guid>
       <description></description>
     </item>
     

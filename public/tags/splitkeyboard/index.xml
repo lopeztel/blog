@@ -15,7 +15,7 @@
       <guid>https://lopeztel.xyz/blog/2022/05/17/making-another-split-keyboard-lily58-qmk-edition/</guid>
       <description>With the previous success (see part1, part1-a and part2) in making a bluetooth keyboard, I decided to make another keyboard with a different approach:
 My excuse for building this keyboard was that my blue switches keyboard may be too noisy for the office, and the work desktop has no bluetooth (I know, sad, right?). The plan for this one was:
-Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead.</description>
+ Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@ Quieter Red gateron switches rather than blue USB powered rather than battery po
       <guid>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</guid>
       <description>This is a followup on a previous entry
 It has been a while since I last wrote about this but I’ve been busy:
-Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse and bought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
+Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse andbought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ Flashing the first nRFmicro The very fist attempt at flashing the bootloader to 
       <description>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
 I found some instructions in blackmagic-bluepill to follow
 I’ll try to summarize:
-wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
+ wiring is important!  Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
     </item>
     
     <item>

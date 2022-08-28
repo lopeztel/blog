@@ -15,7 +15,7 @@
       <guid>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</guid>
       <description>This is a followup on a previous entry
 It has been a while since I last wrote about this but I’ve been busy:
-Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse and bought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
+Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse andbought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ Flashing the first nRFmicro The very fist attempt at flashing the bootloader to 
       <description>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
 I found some instructions in blackmagic-bluepill to follow
 I’ll try to summarize:
-wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
+ wiring is important!  Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ wiring is important! Since the whole point of making the BMP flasher/debugger wa
       <guid>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</guid>
       <description>It seems that it is normal for me to buy stuff/parts/devkits and let them accumulate some dust before getting back to the project pile …
 Just recently I read on the Pine64 Blog June update that Infinitime 1.2 was coming soon… Then I remembered I had ordered a PineTime devkit (part of the first batch ever actually) so I decided to find it and flash working firmware on it…
-I attempted to flash it with a STM bluepill Black Magic Probe first:</description>
+I attempted to flash it with a STM bluepill Black Magic Probe first:Image taken from this forum thread</description>
     </item>
     
     <item>

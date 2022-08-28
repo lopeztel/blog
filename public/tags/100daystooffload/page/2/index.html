@@ -149,6 +149,21 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Making a bluetooth split keyboard (Part 1-a)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
+I found some instructions in blackmagic-bluepill to follow
+I’ll try to summarize:
+ wiring is important!  Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load ....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-07-05 19:00:20 +0000 +0000'>July 5, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
+  <a class="entry-link" aria-label="post link to Making a bluetooth split keyboard (Part 1-a)" href="https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>RGB WiFi enabled lamp (Part 2)
     </h2>
   </header>
@@ -169,7 +184,7 @@ The idea is to have mqtt messages triggering different behavior in my code, the 
   <div class="entry-content">
     <p>It seems that it is normal for me to buy stuff/parts/devkits and let them accumulate some dust before getting back to the project pile …
 Just recently I read on the Pine64 Blog June update that Infinitime 1.2 was coming soon… Then I remembered I had ordered a PineTime devkit (part of the first batch ever actually) so I decided to find it and flash working firmware on it…
-I attempted to flash it with a STM bluepill Black Magic Probe first:...</p>
+I attempted to flash it with a STM bluepill Black Magic Probe first:Image taken from this forum thread...</p>
   </div>
   <footer class="entry-footer"><span title='2021-06-26 19:00:00 +0000 +0000'>June 26, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;lopeztel</footer>
   <a class="entry-link" aria-label="post link to Infinitime 1.2-0 on PineTime, from scratch" href="https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/"></a>
@@ -200,19 +215,6 @@ The first step was to make the nRFmicro board using the soldering guide in the r
   </div>
   <footer class="entry-footer"><span title='2021-06-02 19:04:16 +0000 +0000'>June 2, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;lopeztel</footer>
   <a class="entry-link" aria-label="post link to Making a bluetooth split keyboard (part 1)" href="https://lopeztel.xyz/blog/2021/06/02/making-a-bluetooth-split-keyboard-part-1/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Fooling around with bash scripts 2
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>This is a follow-up to my previous entries: Fooling around with bash scripts, which I used as a base for Migration from Google Photos to Nextcloud and Piwigo
-Since some of my old picture albums have old .mov, .mpg and .avi videos in them I decided to also convert them to .mp4 (piwigo can show them in the albums), so once again I tried came up with something to automate the task...</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-02-28 13:20:27 +0000 +0000'>February 28, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
-  <a class="entry-link" aria-label="post link to Fooling around with bash scripts 2" href="https://lopeztel.xyz/blog/2021/02/28/fooling-around-with-bash-scripts-2/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

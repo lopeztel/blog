@@ -15,8 +15,7 @@
       <guid>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</guid>
       <description>I finally got to make some upgrades to my desktop computer!
 Before Just for context, my desktop computer was a hand-me-down that a friend just gave me because he had gotten a much better one. I took it and played around with it. After all these years this was the first time I owned a computer with a dedicated GPU (I know, sad but true)
-These were the specs:
-Motherboard CPU GPU GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
+These were the specs:   Motherboard CPU GPU     GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X    The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
     </item>
     
     <item>
@@ -125,7 +124,7 @@ I’ll just document the steps I followed (2 alternatives)
 powerline-shell Install powerline-shell (more configuration options in the Github repo):
 sudo pip install powerline-shell
 Add these lines to .zshrc:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&amp;#34;$(powerline-shell --shell zsh $?</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=&amp;#34;$(powerline-shell --shell zsh $?</description>
     </item>
     
     <item>

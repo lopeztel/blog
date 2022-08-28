@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.101.0" /><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.93.3" /><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -203,6 +203,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Rust experiments on BBC MicroBit
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I’m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I’ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)
+Rust environment I started by installing rust via rustup:
+1  curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-08-28 19:17:53 +0200 CEST'>August 28, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Lopeztel</footer>
+  <a class="entry-link" aria-label="post link to Rust experiments on BBC MicroBit" href="https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Migrating from WordPress to Hugo
     </h2>
   </header>
@@ -223,7 +237,7 @@ I was gladly surprised by the fact that Hugo is easy to install in Arch or Arch 
   <div class="entry-content">
     <p>With the previous success (see part1, part1-a and part2) in making a bluetooth keyboard, I decided to make another keyboard with a different approach:
 My excuse for building this keyboard was that my blue switches keyboard may be too noisy for the office, and the work desktop has no bluetooth (I know, sad, right?). The plan for this one was:
-Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead....</p>
+ Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead....</p>
   </div>
   <footer class="entry-footer"><span title='2022-05-17 19:32:55 +0000 +0000'>May 17, 2022</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;lopeztel</footer>
   <a class="entry-link" aria-label="post link to Making another split keyboard: Lily58 QMK edition" href="https://lopeztel.xyz/blog/2022/05/17/making-another-split-keyboard-lily58-qmk-edition/"></a>
@@ -238,7 +252,7 @@ Quieter Red gateron switches rather than blue USB powered rather than battery po
     <p>I’ll start this post by saying that I have a thing for the Nord theme, every time I clean install a system I go through the trouble of applying the theme to everything, which got me thinking that I could automate most of it, at least for my gnome installs.
 More info on Nord theme ports here
 My script (also available here) should:
-Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github....</p>
+ Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github....</p>
   </div>
   <footer class="entry-footer"><span title='2022-05-06 20:52:46 +0000 +0000'>May 6, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;lopeztel</footer>
   <a class="entry-link" aria-label="post link to Gnome Nord theme install script" href="https://lopeztel.xyz/blog/2022/05/06/gnome-nord-theme-install-script/"></a>
@@ -252,25 +266,10 @@ Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create 
   <div class="entry-content">
     <p>This is a followup on a previous entry
 It has been a while since I last wrote about this but I’ve been busy:
-Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse and bought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work...</p>
+Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse andbought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work...</p>
   </div>
   <footer class="entry-footer"><span title='2021-09-15 18:45:53 +0000 +0000'>September 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;lopeztel</footer>
   <a class="entry-link" aria-label="post link to Making a bluetooth split keyboard part 2" href="https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Making a bluetooth split keyboard (Part 1-a)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
-I found some instructions in blackmagic-bluepill to follow
-I’ll try to summarize:
-wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load ....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-07-05 19:00:20 +0000 +0000'>July 5, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;lopeztel</footer>
-  <a class="entry-link" aria-label="post link to Making a bluetooth split keyboard (Part 1-a)" href="https://lopeztel.xyz/blog/2021/07/05/making-a-bluetooth-split-keyboard-part-1-a/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

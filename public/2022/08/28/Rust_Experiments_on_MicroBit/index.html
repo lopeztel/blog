@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Rust experiments on BBC MicroBit | Lopeztel&#39;s Blog</title>
+<meta name="keywords" content="100DaysToOffload, rust, nRF52833, microbit">
+<meta name="description" content="I&rsquo;m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I&rsquo;ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)
+Rust environment I started by installing rust via rustup:
+1  curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:">
+<meta name="author" content="Lopeztel">
+<link rel="canonical" href="https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.b183800e2cfbb62c3bce2b2ba56cdb2dd33af76c75cf4550173d5dfebd7c68a6.css" integrity="sha256-sYOADiz7tiw7zisrpWzbLdM692x1z0VQFz1d/r18aKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://lopeztel.xyz/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lopeztel.xyz/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lopeztel.xyz/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lopeztel.xyz/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lopeztel.xyz/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Rust experiments on BBC MicroBit" />
+<meta property="og:description" content="I&rsquo;m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I&rsquo;ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)
+Rust environment I started by installing rust via rustup:
+1  curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-28T19:17:53&#43;02:00" />
+<meta property="article:modified_time" content="2022-08-28T19:17:53&#43;02:00" /><meta property="og:site_name" content="Lopeztel&#39;s blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rust experiments on BBC MicroBit"/>
+<meta name="twitter:description" content="I&rsquo;m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I&rsquo;ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)
+Rust environment I started by installing rust via rustup:
+1  curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://lopeztel.xyz/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Rust experiments on BBC MicroBit",
+      "item": "https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Rust experiments on BBC MicroBit",
+  "name": "Rust experiments on BBC MicroBit",
+  "description": "I\u0026rsquo;m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I\u0026rsquo;ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)\nRust environment I started by installing rust via rustup:\n1  curl --proto \u0026#39;=https\u0026#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:",
+  "keywords": [
+    "100DaysToOffload", "rust", "nRF52833", "microbit"
+  ],
+  "articleBody": "I’m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I’ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)\nRust environment I started by installing rust via rustup:\n1  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:\n1  sudo dnf install gdb minicom   Updating udev rules for microbit, requires creating 99-microbit.rules:\n1 2  # CMSIS-DAP for microbit SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0d28\", ATTR{idProduct}==\"0204\", MODE:=\"666\"   under the following path /etc/udev/rules.d/, then reloaded udev rules by typing:\n1  sudo udevadm control --reload-rules   Something that wasn’t obvious from the next steps past the environment setup in the book was where to find the source code but some searching did the trick and I found the repo and cloned it\n1  git clone https://github.com/rust-embedded/discovery.git   Also not explicitly mentioned but the embed subcommand must be available for cargo, so I had to install it:\n1  cargo install cargo-embed   Which in turn failed (something about libudev package not found), so I went to the cargo-embed github repo and discovered I was missing some requirements:\n1  sudo dnf install systemd-devel   First test Then, to prepare for my architecture (BBC Microbit v2.00 is ARMv7), some modifications to file Embed.toml under path /microbit/src/03-setup/ had to be made:\n1 2 3  [default.general] chip = \"nrf52833_xxAA\" # uncomment this line for micro:bit V2 # chip = \"nrf51822_xxAA\" # uncomment this line for micro:bit V1   Now, to load the sample application under the same directory, I ran:\n1 2  rustup target add thumbv7em-none-eabihf cargo embed --target thumbv7em-none-eabihf   Which leads to the following output in the terminal:\n1 2 3 4 5 6 7  cargo embed --target thumbv7em-none-eabihf Finished dev [unoptimized + debuginfo] target(s) in 0.08s Config default Target /home/lopeztel/discovery/microbit/target/thumbv7em-none-eabihf/debug/rtt-check Erasing sectors ✔ [00:00:00] [##############] 16.00KiB/16.00KiB @ 33.29KiB/s (eta 0s ) Programming pages ✔ [00:00:00] [##############] 16.00KiB/16.00KiB @ 11.58KiB/s (eta 0s ) Finished flashing in 0.969s   Followed by a terminal window that prints the output Hello World (program running in the MicroBit):\n Day 4 of my 2022’s #100DaysToOffload\nJoin 100DaysToOffload\n",
+  "wordCount" : "367",
+  "inLanguage": "en",
+  "datePublished": "2022-08-28T19:17:53+02:00",
+  "dateModified": "2022-08-28T19:17:53+02:00",
+  "author":{
+    "@type": "Person",
+    "name": "Lopeztel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lopeztel's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lopeztel.xyz/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lopeztel.xyz/blog" accesskey="h" title="Lopeztel&#39;s Blog (Alt + H)">Lopeztel&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lopeztel.xyz/blog/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lopeztel.xyz/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://lopeztel.xyz/blog">Home</a>&nbsp;»&nbsp;<a href="https://lopeztel.xyz/blog/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Rust experiments on BBC MicroBit
+    </h1>
+    <div class="post-meta"><span title='2022-08-28 19:17:53 +0200 CEST'>August 28, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Lopeztel
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#rust-environment" aria-label="Rust environment">Rust environment</a></li>
+                <li>
+                    <a href="#first-test" aria-label="First test">First test</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>I&rsquo;m writing this post because I basically wanted to learn rust, and doing so
+through a practical example for embedded would be a nice way to do it. I&rsquo;ll be
+basically ripping off from the book
+<a href="https://docs.rust-embedded.org/discovery/">Discover</a>, available at
+<a href="https://www.rust-lang.org/what/embedded">https://www.rust-lang.org/what/embedded</a> (it is important to mention that I am using a MicroBit v2.00)</p>
+<h2 id="rust-environment">Rust environment<a hidden class="anchor" aria-hidden="true" href="#rust-environment">#</a></h2>
+<p>I started by installing rust via <a href="https://www.rust-lang.org/tools/install">rustup</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then installing a debugger and a serial terminal cli program:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install gdb minicom
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Updating udev rules for microbit, requires creating <code>99-microbit.rules</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span><span class="lnt" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># CMSIS-DAP for microbit
+</span></span><span class="line"><span class="cl">SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;0d28&#34;, ATTR{idProduct}==&#34;0204&#34;, MODE:=&#34;666&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>under the following path <code>/etc/udev/rules.d/</code>, then reloaded udev rules by typing:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo udevadm control --reload-rules
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Something that wasn&rsquo;t obvious from the next steps past the environment setup in the book was where to find the source code but some searching did the trick and I found the repo and cloned it</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-4-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/rust-embedded/discovery.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Also not explicitly mentioned but the <code>embed</code> subcommand must be available for cargo, so I had to install it:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-5-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cargo install cargo-embed
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Which in turn failed (something about libudev package not found), so I went to the <a href="https://github.com/probe-rs/cargo-embed">cargo-embed github repo</a> and discovered I was missing some requirements:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-6-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install systemd-devel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="first-test">First test<a hidden class="anchor" aria-hidden="true" href="#first-test">#</a></h2>
+<p>Then, to prepare for my architecture (BBC Microbit v2.00 is ARMv7), some modifications to file <code>Embed.toml</code> under path <code>&lt;repo_root&gt;/microbit/src/03-setup/</code> had to be made:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-7-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1">1</a>
+</span><span class="lnt" id="hl-7-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2">2</a>
+</span><span class="lnt" id="hl-7-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-3">3</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[default.general]
+</span></span><span class="line"><span class="cl">chip = &#34;nrf52833_xxAA&#34; # uncomment this line for micro:bit V2
+</span></span><span class="line"><span class="cl"># chip = &#34;nrf51822_xxAA&#34; # uncomment this line for micro:bit V1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, to load the sample application under the same directory, I ran:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-8-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-1">1</a>
+</span><span class="lnt" id="hl-8-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-8-2">2</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rustup target add thumbv7em-none-eabihf
+</span></span><span class="line"><span class="cl">cargo embed --target thumbv7em-none-eabihf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Which leads to the following output in the terminal:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-9-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-1">1</a>
+</span><span class="lnt" id="hl-9-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-2">2</a>
+</span><span class="lnt" id="hl-9-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-3">3</a>
+</span><span class="lnt" id="hl-9-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-4">4</a>
+</span><span class="lnt" id="hl-9-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-5">5</a>
+</span><span class="lnt" id="hl-9-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-6">6</a>
+</span><span class="lnt" id="hl-9-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-9-7">7</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go"> cargo embed --target thumbv7em-none-eabihf
+</span></span></span><span class="line"><span class="cl"><span class="go">    Finished dev [unoptimized + debuginfo] target(s) in 0.08s
+</span></span></span><span class="line"><span class="cl"><span class="go">      Config default
+</span></span></span><span class="line"><span class="cl"><span class="go">      Target /home/lopeztel/discovery/microbit/target/thumbv7em-none-eabihf/debug/rtt-check
+</span></span></span><span class="line"><span class="cl"><span class="go">     Erasing sectors ✔ [00:00:00] [##############] 16.00KiB/16.00KiB @ 33.29KiB/s (eta 0s )
+</span></span></span><span class="line"><span class="cl"><span class="go"> Programming pages   ✔ [00:00:00] [##############] 16.00KiB/16.00KiB @ 11.58KiB/s (eta 0s )
+</span></span></span><span class="line"><span class="cl"><span class="go">    Finished flashing in 0.969s
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Followed by a terminal window that prints the output <code>Hello World</code> (program running in the MicroBit):</p>
+<p><img loading="lazy" src="https://lopeztel.noho.st/piwigo/galleries/blog_media/Screenshot_2022-08-28-21-42-33.png" alt="Console output"  />
+</p>
+<hr>
+<p>Day 4 of my 2022&rsquo;s <a href="https://lopeztel.xyz/blog/tags/100daystooffload/">#100DaysToOffload</a></p>
+<p>Join <a href="https://100daystooffload.com/">100DaysToOffload</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://lopeztel.xyz/blog/tags/100daystooffload/">100DaysToOffload</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/rust/">rust</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/nrf52833/">nRF52833</a></li>
+      <li><a href="https://lopeztel.xyz/blog/tags/microbit/">microbit</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://lopeztel.xyz/blog/2022/08/22/from-wordpress-to-hugo/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Migrating from WordPress to Hugo</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://lopeztel.xyz/blog">Lopeztel&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

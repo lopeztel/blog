@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Lopeztel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Aug 2022 19:37:10 +0200</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Aug 2022 19:17:53 +0200</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust experiments on BBC MicroBit</title>
+      <link>https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/</link>
+      <pubDate>Sun, 28 Aug 2022 19:17:53 +0200</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/</guid>
+      <description>I&amp;rsquo;m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I&amp;rsquo;ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)
+Rust environment I started by installing rust via rustup:
+1  curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:</description>
+    </item>
+    
     <item>
       <title>Migrating from WordPress to Hugo</title>
       <link>https://lopeztel.xyz/blog/2022/08/22/from-wordpress-to-hugo/</link>
@@ -26,7 +37,7 @@ I was gladly surprised by the fact that Hugo is easy to install in Arch or Arch 
       <guid>https://lopeztel.xyz/blog/2022/05/17/making-another-split-keyboard-lily58-qmk-edition/</guid>
       <description>With the previous success (see part1, part1-a and part2) in making a bluetooth keyboard, I decided to make another keyboard with a different approach:
 My excuse for building this keyboard was that my blue switches keyboard may be too noisy for the office, and the work desktop has no bluetooth (I know, sad, right?). The plan for this one was:
-Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead.</description>
+ Quieter Red gateron switches rather than blue USB powered rather than battery power, which allows for WS2812B LEDs and OLED display Not a lot of assembly required (nRFmicro was a bit of a pain), so I chose the Pro Micro as a controller board instead.</description>
     </item>
     
     <item>
@@ -38,7 +49,7 @@ Quieter Red gateron switches rather than blue USB powered rather than battery po
       <description>I’ll start this post by saying that I have a thing for the Nord theme, every time I clean install a system I go through the trouble of applying the theme to everything, which got me thinking that I could automate most of it, at least for my gnome installs.
 More info on Nord theme ports here
 My script (also available here) should:
-Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github.</description>
+ Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create the nord profile for gnome-terminal from https://github.</description>
     </item>
     
     <item>
@@ -49,7 +60,7 @@ Install the gtk/kvantum themes from https://github.com/EliverLara/Nordic Create 
       <guid>https://lopeztel.xyz/blog/2021/09/15/making-a-bluetooth-split-keyboard-part-2/</guid>
       <description>This is a followup on a previous entry
 It has been a while since I last wrote about this but I’ve been busy:
-Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse and bought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
+Flashing the first nRFmicro The very fist attempt at flashing the bootloader to my nRFmicro board failed miserably because I botched some pins on the main module so I used this as an excuse andbought Pine64’s hammerhead kit to repair my soldering poor job, which seemed to work</description>
     </item>
     
     <item>
@@ -61,7 +72,7 @@ Flashing the first nRFmicro The very fist attempt at flashing the bootloader to 
       <description>A bit of a followup on a previous entry, I’ve succeeded in turning a Chinese STM32F103 clone into a Black Magic Probe :
 I found some instructions in blackmagic-bluepill to follow
 I’ll try to summarize:
-wiring is important! Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
+ wiring is important!  Since the whole point of making the BMP flasher/debugger was to flash the nRFmicro, I followed the instructions on the nRFmicro repo got their supplied blackmagic binaries For some reason I had to fiddle around and hold the reset button before attaching a device (search STM32 bluepill connect under reset for more on this) , it was a hit and miss thing … (arm-none-eabi-binutils, arm-none-eabi-gcc and arm-none-eabi-gdb are installed at this point, this is the list of commands to follow: I couldn’t load .</description>
     </item>
     
     <item>
@@ -83,7 +94,7 @@ The idea is to have mqtt messages triggering different behavior in my code, the 
       <guid>https://lopeztel.xyz/blog/2021/06/26/infinitime-1-2-0-on-pinetime-from-scratch/</guid>
       <description>It seems that it is normal for me to buy stuff/parts/devkits and let them accumulate some dust before getting back to the project pile …
 Just recently I read on the Pine64 Blog June update that Infinitime 1.2 was coming soon… Then I remembered I had ordered a PineTime devkit (part of the first batch ever actually) so I decided to find it and flash working firmware on it…
-I attempted to flash it with a STM bluepill Black Magic Probe first:</description>
+I attempted to flash it with a STM bluepill Black Magic Probe first:Image taken from this forum thread</description>
     </item>
     
     <item>
@@ -115,7 +126,7 @@ The first step was to make the nRFmicro board using the soldering guide in the r
       <guid>https://lopeztel.xyz/blog/2021/05/10/mexican-food-part-2/</guid>
       <description>This is a bit of a follow-up on my previous rant on Mexican food and its representation abroad, see the previous entry, since last time I’ve tried to show “the way” to my Norwegian friends and I thought it would be nice to document the process.
 I’ve also written about food during some holidays, see:
-Day of the Dead away from Mexico Day of the Epiphany away from Mexico The first time I cooked something remotely close to real Mexican food had to wait until I got a care package, after Christmas-New Year’s, it contained some traditional sweets (long gone by the time of writing of this entry), some Mezcal (I like to describe the flavor as “smoked” Tequila) and some flasks of Mole and an assortment of dry peppers</description>
+ Day of the Dead away from Mexico Day of the Epiphany away from Mexico  The first time I cooked something remotely close to real Mexican food had to wait until I got a care package, after Christmas-New Year’s, it contained some traditional sweets (long gone by the time of writing of this entry), some Mezcal (I like to describe the flavor as “smoked” Tequila) and some flasks of Mole and an assortment of dry peppers</description>
     </item>
     
     <item>
@@ -156,8 +167,7 @@ Just for context I didn’t have that much in Google Photos, around 45 GB total,
       <guid>https://lopeztel.xyz/blog/2021/02/05/upgrading-my-rig/</guid>
       <description>I finally got to make some upgrades to my desktop computer!
 Before Just for context, my desktop computer was a hand-me-down that a friend just gave me because he had gotten a much better one. I took it and played around with it. After all these years this was the first time I owned a computer with a dedicated GPU (I know, sad but true)
-These were the specs:
-Motherboard CPU GPU GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
+These were the specs:   Motherboard CPU GPU     GA-P55-USB3 Intel Core i7 870 Sapphire R9 280X    The computer could keep up with daily tasks quite well but I really wanted to game on it, it could only keep up with CS:GO and other light Steam games, I also started tweaking and doing minor upgrades with time…</description>
     </item>
     
     <item>
@@ -335,9 +345,8 @@ The hike was long (11+ Km), it took us around 1.</description>
       
       <guid>https://lopeztel.xyz/blog/2020/10/16/weird-things-happen-when-you-selfhost-your-blog-edit/</guid>
       <description>Interesting, I managed to screw up my blog. Logging in is impossible through a web browser, I get the message:
-502 Bad Gateway
-&amp;ndash; nginx
-This happened after messing around with the WP Reset plugin, apparently I deleted some custom table I shouldn’t have… Funnily enough I am still able to use the android app to create posts so not all hope is gone.
+ 502 Bad Gateway
+&amp;ndash; nginx This happened after messing around with the WP Reset plugin, apparently I deleted some custom table I shouldn’t have… Funnily enough I am still able to use the android app to create posts so not all hope is gone.
 Weird things happen….
 Edit: Turns out I couldn’t access the login screen for my site but could access the comments section (you know the one where you can approve new comments, then from there Dashboard was broken but I could access the menu Tools -&amp;gt; WP Reset).</description>
     </item>
@@ -416,7 +425,7 @@ I’ll just document the steps I followed (2 alternatives)
 powerline-shell Install powerline-shell (more configuration options in the Github repo):
 sudo pip install powerline-shell
 Add these lines to .zshrc:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&amp;#34;$(powerline-shell --shell zsh $?</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=&amp;#34;$(powerline-shell --shell zsh $?</description>
     </item>
     
     <item>
@@ -450,7 +459,7 @@ On a more serious note, my previous blog was hosted at qua.name and there was no
       
       <guid>https://lopeztel.xyz/blog/2020/08/09/progress-report-on-a-more-foss-floss-decentralized-digital-life/</guid>
       <description>For context, let me refer to my very first entry, the idea was basically looking for alternatives, so here’s the long awaited progress report:
-Changes already in place Using Mastodon instead of Twitter Using Pixelfed instead of Instagram (On Android) Using NewPipe instead of YouTube, this one is quite cool, it has all the features you’d want: Download, Picture in Picture mode, Background Music reproduction… Using Writefreely and/or WordPress (Still haven’t decided) instead of other blogging platforms (On Android) Using Signal instead of WhatsApp, although that may change in the near future Using Jitsi Meet instead of Skype, Zoom, Google Hangouts Using Protonmail instead of Gmail (although not sure if FOSS/FLOSS, they maintain an OpenPGP library) (On Android) Using Simple Mobile Tools SMS Messenger instead of Google Messages Using Simple Mobile Tools Gallery instead of Google Photos Using Bitwarden instead of LastPass (On Android) Using andOTP (at least for personal stuff) Using F-Droid instead of the Google Play Store whenever possible Changes in transition period Self-hosted Nextcloud instead of Dropbox, Google Drive, One Drive… Self-hosted Gitea instead of Github (currently only mirroring) Self-hosted Piwigo gallery instead of Google Photos (more info on my setup here) Self-hosted email (problems with outgoing port 25) Self-hosted Synapse (Matrix server) in testing phase, could replace Signal by Element if tests show promising results Calendar synchronization using Nextcloud instead of Google Calendar (Android apps: Simple Mobile Tools Calendar, DAVX5 and OpenTasks) (On Android) Trying to use OsmAnd instead of Google Maps (This is by far the hardest change to be made) Compromises Facebook is still the platform where everyone plans events so I need that just to follow-up on them (not actively in use) Whatsapp and Facebook messenger as backup messaging (Trying to move friends and family over to Signal or Element) Can’t seem to get away from Microsoft: Teams, Outlook and Microsoft Authenticator are used for work Day 11 of #100DaysToOffload</description>
+Changes already in place  Using Mastodon instead of Twitter Using Pixelfed instead of Instagram (On Android) Using NewPipe instead of YouTube, this one is quite cool, it has all the features you’d want: Download, Picture in Picture mode, Background Music reproduction… Using Writefreely and/or WordPress (Still haven’t decided) instead of other blogging platforms (On Android) Using Signal instead of WhatsApp, although that may change in the near future Using Jitsi Meet instead of Skype, Zoom, Google Hangouts Using Protonmail instead of Gmail (although not sure if FOSS/FLOSS, they maintain an OpenPGP library) (On Android) Using Simple Mobile Tools SMS Messenger instead of Google Messages Using Simple Mobile Tools Gallery instead of Google Photos Using Bitwarden instead of LastPass (On Android) Using andOTP (at least for personal stuff) Using F-Droid instead of the Google Play Store whenever possible  Changes in transition period  Self-hosted Nextcloud instead of Dropbox, Google Drive, One Drive… Self-hosted Gitea instead of Github (currently only mirroring) Self-hosted Piwigo gallery instead of Google Photos (more info on my setup here) Self-hosted email (problems with outgoing port 25) Self-hosted Synapse (Matrix server) in testing phase, could replace Signal by Element if tests show promising results Calendar synchronization using Nextcloud instead of Google Calendar (Android apps: Simple Mobile Tools Calendar, DAVX5 and OpenTasks) (On Android) Trying to use OsmAnd instead of Google Maps (This is by far the hardest change to be made)  Compromises  Facebook is still the platform where everyone plans events so I need that just to follow-up on them (not actively in use) Whatsapp and Facebook messenger as backup messaging (Trying to move friends and family over to Signal or Element) Can’t seem to get away from Microsoft: Teams, Outlook and Microsoft Authenticator are used for work  Day 11 of #100DaysToOffload</description>
     </item>
     
     <item>
@@ -533,7 +542,7 @@ After a well deserved month of relaxation back home (Mexico), my first day on my
       
       <guid>https://lopeztel.xyz/blog/2020/06/26/nice-gestures/</guid>
       <description>Having being abroad and back home 2 times in the last 3 years have taught me that living in Mexico makes you take some things for granted:
-Family Excellent food Friends Let’s just say that personal interactions have been… different, but not in a bad way.
+ Family Excellent food Friends  Let’s just say that personal interactions have been… different, but not in a bad way.
 I was always a bit of an oddball, antisocial even (for Mexican standards), but after accepting a job offer in November that led to moving to Norway, knowing just a handful of people in the city (from my Masters program), living alone and COVID-19 lock down, even I started to feel anxious and a bit depressed.</description>
     </item>
     

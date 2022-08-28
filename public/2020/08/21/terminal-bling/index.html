@@ -12,7 +12,7 @@ I’ll just document the steps I followed (2 alternatives)
 powerline-shell Install powerline-shell (more configuration options in the Github repo):
 sudo pip install powerline-shell
 Add these lines to .zshrc:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&#34;$(powerline-shell --shell zsh $?">
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=&#34;$(powerline-shell --shell zsh $?">
 <meta name="author" content="lopeztel">
 <link rel="canonical" href="https://lopeztel.xyz/blog/2020/08/21/terminal-bling/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.b183800e2cfbb62c3bce2b2ba56cdb2dd33af76c75cf4550173d5dfebd7c68a6.css" integrity="sha256-sYOADiz7tiw7zisrpWzbLdM692x1z0VQFz1d/r18aKY=" rel="preload stylesheet" as="style">
@@ -65,7 +65,7 @@ I’ll just document the steps I followed (2 alternatives)
 powerline-shell Install powerline-shell (more configuration options in the Github repo):
 sudo pip install powerline-shell
 Add these lines to .zshrc:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&#34;$(powerline-shell --shell zsh $?" />
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=&#34;$(powerline-shell --shell zsh $?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lopeztel.xyz/blog/2020/08/21/terminal-bling/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-21T18:15:46&#43;00:00" />
@@ -78,7 +78,7 @@ I’ll just document the steps I followed (2 alternatives)
 powerline-shell Install powerline-shell (more configuration options in the Github repo):
 sudo pip install powerline-shell
 Add these lines to .zshrc:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=&#34;$(powerline-shell --shell zsh $?"/>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=&#34;$(powerline-shell --shell zsh $?"/>
 
 
 <script type="application/ld+json">
@@ -107,12 +107,12 @@ Add these lines to .zshrc:
   "@type": "BlogPosting",
   "headline": "Terminal bling",
   "name": "Terminal bling",
-  "description": "Followup on my previous entry related to my wallpaper. I just wanted my terminal to look nice since I spend quite some time on it. I use zsh by the way, but there are similar instructions for bash as well.\nI’ll just document the steps I followed (2 alternatives)\npowerline-shell Install powerline-shell (more configuration options in the Github repo):\nsudo pip install powerline-shell\nAdd these lines to .zshrc:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=\u0026#34;$(powerline-shell --shell zsh $?",
+  "description": "Followup on my previous entry related to my wallpaper. I just wanted my terminal to look nice since I spend quite some time on it. I use zsh by the way, but there are similar instructions for bash as well.\nI’ll just document the steps I followed (2 alternatives)\npowerline-shell Install powerline-shell (more configuration options in the Github repo):\nsudo pip install powerline-shell\nAdd these lines to .zshrc:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=\u0026#34;$(powerline-shell --shell zsh $?",
   "keywords": [
     "100DaysToOffload", "Manjaro"
   ],
-  "articleBody": "Followup on my previous entry related to my wallpaper. I just wanted my terminal to look nice since I spend quite some time on it. I use zsh by the way, but there are similar instructions for bash as well.\nI’ll just document the steps I followed (2 alternatives)\npowerline-shell Install powerline-shell (more configuration options in the Github repo):\nsudo pip install powerline-shell\nAdd these lines to .zshrc:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function powerline_precmd() { PS1=\"$(powerline-shell --shell zsh $?)\" } function install_powerline_precmd() { for s in \"${precmd_functions\u0026#91;@]}\"; do if \u0026#91; \"$s\" = \"powerline_precmd\" ]; then return fi done precmd_functions+=(powerline_precmd) } if \u0026#91; \"$TERM\" != \"linux\" ]; then install_powerline_precmd fi ohmyzsh Install ohmyzsh:\nsh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\nReplace the theme in line\nZSH_THEME=\"robbyrussell\"\nby one of the themes in this list, I chose agnoster.\nColor scheme (doesn’t work completely with powerline-shell) Install pywal:\nThen run\nwal -i \"/path/to/img.jpg\nWhich I pointed to my pacwall generated wallpaper, you should see a change in color scheme now. This is my result:\nFinally make the color scheme part of the .zshrc and persist between reboots (by modifying .xinitrc) (based on these instructions, here are my .zshrc additions:\n1 2 (cat ~/.cache/wal/sequences \u0026) neofetch And my .xinitrc addition:\nwal -R\nDay 14 of #100DaysToOffload\n",
-  "wordCount" : "222",
+  "articleBody": "Followup on my previous entry related to my wallpaper. I just wanted my terminal to look nice since I spend quite some time on it. I use zsh by the way, but there are similar instructions for bash as well.\nI’ll just document the steps I followed (2 alternatives)\npowerline-shell Install powerline-shell (more configuration options in the Github repo):\nsudo pip install powerline-shell\nAdd these lines to .zshrc:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  function powerline_precmd() { PS1=\"$(powerline-shell --shell zsh $?)\" } function install_powerline_precmd() { for s in \"${precmd_functions\u0026#91;@]}\"; do if \u0026#91; \"$s\" = \"powerline_precmd\" ]; then return fi done precmd_functions+=(powerline_precmd) } if \u0026#91; \"$TERM\" != \"linux\" ]; then install_powerline_precmd fi   ohmyzsh Install ohmyzsh:\nsh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\nReplace the theme in line\nZSH_THEME=\"robbyrussell\"\nby one of the themes in this list, I chose agnoster.\nColor scheme (doesn’t work completely with powerline-shell) Install pywal:\nThen run\nwal -i \"/path/to/img.jpg\nWhich I pointed to my pacwall generated wallpaper, you should see a change in color scheme now. This is my result:Finally make the color scheme part of the .zshrc and persist between reboots (by modifying .xinitrc) (based on these instructions, here are my .zshrc additions:\n1 2  (cat ~/.cache/wal/sequences \u0026) neofetch   And my .xinitrc addition:\nwal -R\nDay 14 of #100DaysToOffload",
+  "wordCount" : "221",
   "inLanguage": "en",
   "datePublished": "2020-08-21T18:15:46Z",
   "dateModified": "2020-08-21T18:15:46Z",

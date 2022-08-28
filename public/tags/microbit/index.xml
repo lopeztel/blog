@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>microbit on Lopeztel&#39;s Blog</title>
+    <link>https://lopeztel.xyz/blog/tags/microbit/</link>
+    <description>Recent content in microbit on Lopeztel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Aug 2022 19:17:53 +0200</lastBuildDate><atom:link href="https://lopeztel.xyz/blog/tags/microbit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust experiments on BBC MicroBit</title>
+      <link>https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/</link>
+      <pubDate>Sun, 28 Aug 2022 19:17:53 +0200</pubDate>
+      
+      <guid>https://lopeztel.xyz/blog/2022/08/28/Rust_Experiments_on_MicroBit/</guid>
+      <description>I&amp;rsquo;m writing this post because I basically wanted to learn rust, and doing so through a practical example for embedded would be a nice way to do it. I&amp;rsquo;ll be basically ripping off from the book Discover, available at https://www.rust-lang.org/what/embedded (it is important to mention that I am using a MicroBit v2.00)
+Rust environment I started by installing rust via rustup:
+1  curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh   Then installing a debugger and a serial terminal cli program:</description>
+    </item>
+    
+  </channel>
+</rss>
