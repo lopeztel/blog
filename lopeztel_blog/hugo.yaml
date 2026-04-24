@@ -59,10 +59,10 @@ params:
     enabled: true # needs to be explicitly set
     title: "Lopetzel's website \U0001F44B"
     subtitle: "This is my personal blog/website"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    imageUrl: "https://cdn.fosstodon.org/accounts/avatars/000/211/905/original/948965de2dc05f91.jpeg"
+    imageWidth: 320
+    imageHeight: 320
+    imageTitle: lopeztel
     buttons:
       - name: Posts
         url: posts

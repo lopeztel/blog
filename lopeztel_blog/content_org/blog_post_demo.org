@@ -1,0 +1,7 @@
+#+TITLE: My first post
+#+AUTHOR: lopeztel
+#+DATE: <2026-04-24 Fri>
+#+HUGO_TAGS: test 
+
+This is my post body.
+
